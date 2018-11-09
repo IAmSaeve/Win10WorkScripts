@@ -4,7 +4,7 @@ cls
 :Start
 cls
 ECHO.
-ECHO  1. DRIVE 1
+ECHO  1. Trucksales
 ECHO  2. DRIVE 2
 ECHO  3. DRIVE 3
 ECHO  4. DRIVE 4
@@ -18,7 +18,7 @@ set choice=
 set /p choice=Please select an option: 
 
 if not '%choice%'=='' set choice=%choice:~0,1%
-if '%choice%'=='1' goto DRIVE 1
+if '%choice%'=='1' goto X
 if '%choice%'=='2' goto DRIVE 2
 if '%choice%'=='3' goto DRIVE 3
 if '%choice%'=='4' goto DRIVE 4
@@ -32,3 +32,7 @@ ECHO.
 PING localhost -n 2 >NUL
 
 goto Start
+
+
+:X
+net use X: \\192.168.204.28\Trucksales /persistent:Yes
