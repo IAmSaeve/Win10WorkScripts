@@ -74,7 +74,6 @@ goto Start
 cls
 IF %username% NEQ MANIT (
 :: atr variable can be found at the top of the script.
-:: atr is short for "App To Remove"
 %atr%
 
 mkdir C:\Dokumenter\
@@ -86,11 +85,11 @@ ECHO Done
 PING localhost -n 2 >NUL
 goto Start
 ) ELSE (
-ECHO UPS! Der opstod en fejl!
-ECHO Den registrerede bruger er: %username%
+ECHO Oops! An error occurred!
+ECHO The registered user was: %username%.
 ECHO.
-ECHO Denne funktion er kun tilgaengelig for almindelig brugere.
-ECHO Koere du det som Administrator eller paa Admin brugeren?
+ECHO This funktion is only available for normal users.
+ECHO Are you running as Administrator or are you logged in as admin?
 ECHO.
 pause
 goto End
@@ -99,10 +98,7 @@ goto End
 
 :RemoveEdge
 cls
-:: Here is the original method.
-:: It is no longer in use since it had a chance to delte all the *_remove.exe files.
-:: powershell.exe -Command "Start-Process powershell.exe -Verb Runas -ArgumentList \"-Command takeown /R /F C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\*; icacls C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\* /grant ALLE:F; del C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge_remove.exe; del C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdgeCP_remove.exe; del C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftPdfReader_remove.exe; Rename-Item C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge_remove.exe; Rename-Item C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdgeCP.exe C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdgeCP_remove.exe; Rename-Item C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftPdfReader.exe C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftPdfReader_remove.exe\"
-
+:: TODO: Add statement to kill Edge process if running.
 IF EXIST "%userprofile%\Desktop\Microsoft Edge.lnk" (
 	del "%userprofile%\Desktop\Microsoft Edge.lnk"
 )
@@ -223,7 +219,8 @@ cls
 
 :: Flush DNS and shows config for Ethernet.
 ipconfig /flushdns
-powershell.exe -Command "& {netsh interface ip show config name='Ethernet'; Pause}"
+netsh interface ip show config name='Ethernet'
+Pause
 goto Start
 
 :RemoveOneDrive
@@ -242,12 +239,10 @@ rd "%LOCALAPPDATA%\Microsoft\OneDrive" /Q /S
 rd "%PROGRAMDATA%\Microsoft OneDrive" /Q /S
 rd "%UserProfile%\AppData\Local\Microsoft\OneDrive\" /Q /S
 del "%AppData%\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk"
-IF EXIST "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\OneDrive for Business.lnk" (
-	powershell.exe -Command "Start-Process powershell.exe -Verb Runas -ArgumentList \"-Command Rename-Item 'C:\Program Files (x86)\Microsoft Office\Office16\GROOVE.exe' 'C:\Program Files (x86)\Microsoft Office\Office16\GROOVE.exe.disabled'; del 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\OneDrive for Business.lnk'; Exit\""
-) else (
 powershell.exe -Command "Start-Process powershell.exe -Verb Runas -ArgumentList \"-Command Rename-Item 'C:\Program Files (x86)\Microsoft Office\Office16\GROOVE.exe' 'C:\Program Files (x86)\Microsoft Office\Office16\GROOVE.exe.disabled'; Exit\""
-)
+:: del "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\OneDrive for Business.lnk"
 :: Rename-Item "C:\Program Files (x86)\Microsoft Office\Office16\GROOVE.exe" "C:\Program Files (x86)\Microsoft Office\Office16\GROOVE.exe.disabled"
+
 
 :: Unpin from Explorer.
 reg add "HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f /v System.IsPinnedToNameSpaceTree /t REG_DWORD /d 0
@@ -273,17 +268,17 @@ goto Start
 cls
 IF %username% NEQ MANIT (
 :: atr variable can be found at the top of the script.
-:: atr is short for "App To Remove"
 %atr%
+
 ECHO Done
 PING localhost -n 2 >NUL
 goto Start
 ) ELSE (
-ECHO UPS! Der opstod en fejl!
-ECHO Den registrerede bruger er: %username%
+ECHO Oops! An error occurred!
+ECHO The registered user was: %username%.
 ECHO.
-ECHO Denne funktion er kun tilgaengelig for almindelig brugere.
-ECHO Koere du det som Administrator eller paa Admin brugeren?
+ECHO This funktion is only available for normal users.
+ECHO Are you running as Administrator or are you logged in as admin?
 ECHO.
 pause
 goto End
