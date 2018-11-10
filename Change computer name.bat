@@ -1,3 +1,5 @@
+:: TODO: This should be reworked to use UAC promt.
+
 @echo off
 
 :: Gets user input.
