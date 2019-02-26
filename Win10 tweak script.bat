@@ -1,10 +1,12 @@
+:: Sebastian Petersen
+:: sebastian@srmail.dk
 
 @ECHO off
 :: Setting list of apps to remove
 set atr=(powershell.exe -NoExit -Command "& {Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.SkypeApp* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.WindowsStore* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.XboxApp* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.WindowsMaps* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.WindowsFeedbackHub* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.Print3D* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.People* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.Office.OneNote* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.MSPaint* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.MicrosoftSolitaireCollection* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.MicrosoftOfficeHub* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.Microsoft3DViewer* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.Messaging* | Remove-AppxPackage ; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.GetHelp* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.Getstarted* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.WindowsCamera* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.RemoteDesktop* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *ActiproSoftwareLLC.562882FEEB491* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *46928bounde.EclipseManager* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *AdobeSystemIncorporated.AdobePhotoshop* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *D5EA27B7.Duolingo* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.NetworkSpeedTest* | Remove-AppxPackage; Get-AppxPackage -User "$env:UserDomain\$env:UserName" *Microsoft.BingNews* | Remove-AppxPackage}; exit")
 
 cls
-
+CHCP 65001
 
 :Start
 cls
@@ -74,6 +76,7 @@ goto Start
 cls
 IF %username% NEQ MANIT (
 :: atr variable can be found at the top of the script.
+:: atr is short for "App To Remove"
 %atr%
 
 mkdir C:\Dokumenter\
@@ -85,11 +88,11 @@ ECHO Done
 PING localhost -n 2 >NUL
 goto Start
 ) ELSE (
-ECHO Oops! An error occurred!
-ECHO The registered user was: %username%.
+ECHO UPS! Der opstod en fejl!
+ECHO Den registrerede bruger er: %username%
 ECHO.
-ECHO This funktion is only available for normal users.
-ECHO Are you running as Administrator or are you logged in as admin?
+ECHO Denne funktion er kun tilgaengelig for almindelig brugere.
+ECHO Koere du det som Administrator eller paa Admin brugeren?
 ECHO.
 pause
 goto End
@@ -98,7 +101,6 @@ goto End
 
 :RemoveEdge
 cls
-:: TODO: Add statement to kill Edge process if running.
 IF EXIST "%userprofile%\Desktop\Microsoft Edge.lnk" (
 	del "%userprofile%\Desktop\Microsoft Edge.lnk"
 )
@@ -125,7 +127,7 @@ IF %_edge% EQU 1 (
 			ECHO Detected new install!
 			ECHO Removing all Microsoft Edge features.
 			PING localhost -n 3 >NUL
-			powershell.exe -Command "Start-Process powershell.exe -Verb Runas -ArgumentList \"-Command takeown /R /F C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\*; icacls C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\* /grant ALLE:F; Rename-Item C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge_remove.exe; Rename-Item C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdgeCP.exe C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdgeCP_remove.exe; Rename-Item C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftPdfReader.exe C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftPdfReader_remove.exe\"
+			powershell.exe -Command "Start-Process powershell.exe -Verb Runas -ArgumentList \"-Command takeown /R /F C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\*; icacls C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\* /grant ALLE:F; Remove-Item C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge_remove.exe; Remove-Item C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdgeCP_remove.exe; Remove-Item C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftPdfReader_remove.exe; Rename-Item C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge_remove.exe; Rename-Item C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdgeCP.exe C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdgeCP_remove.exe; Rename-Item C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftPdfReader.exe C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftPdfReader_remove.exe\"
 			Set _edge=0
 			Set _edgecp=0
 			Set _pdf=0
@@ -219,8 +221,7 @@ cls
 
 :: Flush DNS and shows config for Ethernet.
 ipconfig /flushdns
-netsh interface ip show config name='Ethernet'
-Pause
+powershell.exe -Command "& {netsh interface ip show config name='Ethernet'; Pause}"
 goto Start
 
 :RemoveOneDrive
@@ -240,9 +241,7 @@ rd "%PROGRAMDATA%\Microsoft OneDrive" /Q /S
 rd "%UserProfile%\AppData\Local\Microsoft\OneDrive\" /Q /S
 del "%AppData%\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk"
 powershell.exe -Command "Start-Process powershell.exe -Verb Runas -ArgumentList \"-Command Rename-Item 'C:\Program Files (x86)\Microsoft Office\Office16\GROOVE.exe' 'C:\Program Files (x86)\Microsoft Office\Office16\GROOVE.exe.disabled'; Exit\""
-:: del "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\OneDrive for Business.lnk"
 :: Rename-Item "C:\Program Files (x86)\Microsoft Office\Office16\GROOVE.exe" "C:\Program Files (x86)\Microsoft Office\Office16\GROOVE.exe.disabled"
-
 
 :: Unpin from Explorer.
 reg add "HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f /v System.IsPinnedToNameSpaceTree /t REG_DWORD /d 0
@@ -268,17 +267,17 @@ goto Start
 cls
 IF %username% NEQ MANIT (
 :: atr variable can be found at the top of the script.
+:: atr is short for "App To Remove"
 %atr%
-
 ECHO Done
 PING localhost -n 2 >NUL
 goto Start
 ) ELSE (
-ECHO Oops! An error occurred!
-ECHO The registered user was: %username%.
+ECHO UPS! Der opstod en fejl!
+ECHO Den registrerede bruger er: %username%
 ECHO.
-ECHO This funktion is only available for normal users.
-ECHO Are you running as Administrator or are you logged in as admin?
+ECHO Denne funktion er kun tilgaengelig for almindelig brugere.
+ECHO Koere du det som Administrator eller paa Admin brugeren?
 ECHO.
 pause
 goto End

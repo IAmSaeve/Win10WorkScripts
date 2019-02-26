@@ -1,13 +1,15 @@
-:: TODO: This should be reworked to use UAC promt.
+:: Sebastian Petersen
+:: sebastian@srmail.dk
 
-@echo off
+@ECHO OFF
+CHCP 65001
+CLS
 
 :: Gets user input.
-set /p name="Enter PC-name: "
+SET /p name="Enter PC-name: "
 
-:: Variables to shorten 'runas' command line.
-set "command=runas /user:%COMPUTERNAME%\MANIT wmic computersystem where caption='%COMPUTERNAME%' rename %name%"
-set "msg=echo Please reboot your PC for the chagne to take effect!"
+:: Variable to shorten command line.
+SET "command=Rename-Computer -NewName '%name%' -PassThru; pause"
 
 :: Runs the change NETBIOS name command as administrator.
-runas /user:%COMPUTERNAME%\MANIT "cmd /C %command% & %msg% & pause"
+powershell.exe -Command "Start-Process powershell.exe -Verb Runas -ArgumentList \"-Command %command%\""
