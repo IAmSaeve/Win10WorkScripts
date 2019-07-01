@@ -7,4 +7,3 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 Write-Host "Installing Lexmark Universal v2 XL driver..."
 pnputil.exe /add-driver "$PSScriptRoot\LMUD1p40.inf" /install
 Add-PrinterDriver -Name "Lexmark Universal v2 XL"
-Pause

@@ -5,20 +5,30 @@
 Write-Host "`nChecking for missing drivers"
 $canonDriver = Get-PrinterDriver | Select-Object Name | Where-Object { $_.Name -EQ "Canon iR-ADV C5235/5240 UFR II" }
 $lexmarkDriver = Get-PrinterDriver | Select-Object Name | Where-Object { $_.Name -EQ "Lexmark Universal v2 XL" }
-# TODO: Spørg om man vil installere driveren & fjern pause fra install scripts
 if ($canonDriver.Name -NE "Canon iR-ADV C5235/5240 UFR II") {
-    Write-Host "Canon driver not found"
+  Write-Host "Canon driver not found"
+  $I = Read-Host -Prompt "Do you want to install the Canon drivers? [y/n]: "
+  if ($I.ToUpper() -EQ "Y") {
     Start-Process -Wait Powershell.exe -ArgumentList "-File `"$PSScriptRoot.\Canon UFR-II\InstallDriver.ps1`""
+  } else {
+    Write-Host "Skipping"; Write-Host
+  }
 }
 else {
-    Write-Host "Canon driver: OK!"
+  Write-Host "Canon driver: OK!"
 }
+
 if ($lexmarkDriver.Name -NE "Lexmark Universal v2 XL") {
-    Write-Host "Lexmark driver not found"
+  Write-Host "Lexmark driver not found"
+  $I = Read-Host -Prompt "Do you want to install the Lexmark drivers? [y/n]: "
+  if ($I.ToUpper() -EQ "Y") {
     Start-Process -Wait Powershell.exe -ArgumentList "-File `"$PSScriptRoot.\Lexmark Universal\InstallDriver.ps1`""
+  } else {
+    Write-Host "Skipping"; Write-Host
+  }
 }
 else {
-    Write-Host "Lexmark driver: OK!"
+  Write-Host "Lexmark driver: OK!"
 }
 Start-Sleep -Seconds 2
 

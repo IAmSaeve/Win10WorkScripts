@@ -7,4 +7,3 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 Write-Host "Installing Canon UFR-II driver..."
 pnputil.exe /add-driver "$PSScriptRoot\cnlb0da64.inf" /install
 Add-PrinterDriver -Name "Canon IR-ADV C5235/5240 UFR II"
-Pause
