@@ -5,7 +5,7 @@
 Write-Host "`nChecking for missing drivers"
 $canonDriver = Get-PrinterDriver | Select-Object Name | Where-Object { $_.Name -EQ "Canon iR-ADV C5235/5240 UFR II" }
 $lexmarkDriver = Get-PrinterDriver | Select-Object Name | Where-Object { $_.Name -EQ "Lexmark Universal v2 XL" }
-# TODO: Spørgm om man vil installere driveren & fjern pause fra install scripts
+# TODO: Spørg om man vil installere driveren & fjern pause fra install scripts
 if ($canonDriver.Name -NE "Canon iR-ADV C5235/5240 UFR II") {
     Write-Host "Canon driver not found"
     Start-Process -Wait Powershell.exe -ArgumentList "-File `"$PSScriptRoot.\Canon UFR-II\InstallDriver.ps1`""
