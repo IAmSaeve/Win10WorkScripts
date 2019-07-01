@@ -1,0 +1,4592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<psf:PrintCapabilities xmlns:psf="http://schemas.microsoft.com/windows/2003/08/printing/printschemaframework" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1" xmlns:ns0000="http://schemas.lexmark.com/windows/2007/01/printing/printschemakeywords" xmlns:psk="http://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords">
+	<!-- If there are two nodes with same option names like in case of Input Bin psk:AutoSelect and ns0000:AutoSelect, they are to be added one after the other -->
+	<psf:Feature name="psk:PageInputBin" SCOPE="PTONLY_PARTIALMATCH" GPDGDLName="InputBin">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:AutoSelect" GPDGDLName="FORMSOURCE" />
+		<psf:Option name="ns0000:AutoSelect" GPDGDLName="USEPRINTER" SCOPE="PT_PS_ONLY" />
+		<psf:Option name="psk:Cassette" GPDGDLName="LxkMultipurpose" />
+		<psf:Option name="psk:Manual" GPDGDLName="MANUAL" />
+		<psf:Option name="psk:Multipurpose" GPDGDLName="LxkMultipurpose" />
+		<psf:Option name="ns0000:LxkManualEnv" GPDGDLName="LxkManualEnv" />
+		<psf:Option name="ns0000:LxkFeeder1" GPDGDLName="EnvelopeFeeder" />
+		<psf:Option name="ns0000:LxkFeeder2" GPDGDLName="Feeder 2" />
+		<psf:Option name="ns0000:LxkTray1" GPDGDLName="LxkTray1" />
+		<psf:Option name="ns0000:LxkTray2" GPDGDLName="LxkTray2" />
+		<psf:Option name="ns0000:LxkTray3" GPDGDLName="LxkTray3" />
+		<psf:Option name="ns0000:LxkTray4" GPDGDLName="LxkTray4" />
+		<psf:Option name="ns0000:LxkTray5" GPDGDLName="LxkTray5" />
+		<psf:Option name="ns0000:LxkTray6" GPDGDLName="LxkTray6" />
+		<psf:Option name="ns0000:LxkTray7" GPDGDLName="LxkTray7" />
+		<psf:Option name="ns0000:LxkTray8" GPDGDLName="LxkTray8" />
+		<psf:Option name="ns0000:LxkTray9" GPDGDLName="LxkTray9" />
+		<psf:Option name="ns0000:LxkTray10" GPDGDLName="LxkTray10" />
+	</psf:Feature>
+	<psf:Feature name="psk:JobDeviceLanguage">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">PostScript Language Level</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:PostScript">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">1</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:LanguageLevel">
+				<psf:Value xsi:type="xsd:integer">1</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:PostScript">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">2</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:LanguageLevel">
+				<psf:Value xsi:type="xsd:integer">2</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:PostScript">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">3</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:LanguageLevel">
+				<psf:Value xsi:type="xsd:integer">3</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobOptimizeOutputFormat" GPDGDLName="JobOptimizeOutputFormat">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Optimize output format</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:SPEED" constrained="psk:None" GPDGDLName="SPEED">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Speed</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="ns0000:PORTABILITY" constrained="psk:None" GPDGDLName="PORTABILITY">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Portability</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:ENCAPSULATED" constrained="psk:None" GPDGDLName="ENCAPSULATED">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Encapsulated Postscript</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:ARCHIVE" constrained="psk:None" GPDGDLName="ARCHIVE">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Archive</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobPrintErrorInformation" GPDGDLName="JobPrintErrorInformation">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Print error information</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobImageCompressionEnable" GPDGDLName="UIEVENT_JobImageCompressionEnable">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Enable Image Compression</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="On">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="ns0000:ImageCompressionValue">
+				<psf:ParameterRef name="ns0000:JobImageCompressionQualityValue" />
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="Off">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+	</psf:Feature>
+	<psf:ParameterDef name="ns0000:JobImageCompressionQualityValue" GPDGDLName="UIEVENT_JobImageCompressionQualityValue">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Image compression quality value</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">90</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">100</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">microns</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:Feature name="ns0000:JobPrintAndHold" GPDGDLName="UIEVENT_JobPrintAndHold">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Print and hold</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:Confidential" constrained="psk:None" GPDGDLName="Confidential">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Confidential</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="ns0000:HoldKey">
+				<psf:ParameterRef name="ns0000:JobPrintAndHoldPIN" />
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="ns0000:JobPrintAndHoldUserName" GPDGDLName="UIEVENT_PrintAndHoldUserName">
+				<psf:ParameterRef name="ns0000:JobUserName" />
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Reserve" constrained="psk:None" GPDGDLName="Reserve">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Reserve</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="ns0000:JobPrintAndHoldUserName" GPDGDLName="UIEVENT_PrintAndHoldUserName">
+				<psf:ParameterRef name="ns0000:JobUserName" />
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Verify" constrained="psk:None" GPDGDLName="Verify">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Verify</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="ns0000:JobPrintAndHoldUserName" GPDGDLName="UIEVENT_PrintAndHoldUserName">
+				<psf:ParameterRef name="ns0000:JobUserName" />
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Repeat" constrained="psk:None" GPDGDLName="Repeat">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Repeat</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="ns0000:JobPrintAndHoldUserName" GPDGDLName="UIEVENT_PrintAndHoldUserName">
+				<psf:ParameterRef name="ns0000:JobUserName" />
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:None" constrained="psk:None" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">None</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobHasKeepPreviousJobs" GPDGDLName="HasKeepPreviousJobs">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Keep duplicate documents</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:PreviousJob0" GPDGDLName="PreviousJob0">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">PreviousJob0</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:PreviousJob1" GPDGDLName="PreviousJob1">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">PreviousJob1</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+	</psf:Feature>
+	<psf:ParameterDef name="ns0000:JobPrintAndHoldPIN" GPDGDLName="UIEVENT_HoldKey">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:string</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Print and hold PIN</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:string">0000</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxLength">
+			<psf:Value xsi:type="xsd:integer">4</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinLength">
+			<psf:Value xsi:type="xsd:integer">4</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Optional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">base64</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:ParameterDef name="ns0000:JobUserName" GPDGDLName="UIEVENT_PrintAndHoldUserName" SCOPE="DONOTDELETE">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:string</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Print and hold User Name</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">base64</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:string">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Optional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinLength">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxLength">
+			<psf:Value xsi:type="xsd:integer">65535</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:Feature name="psk:PageMediaSize" SCOPE="PT_XL_ONLY">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Paper Size</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:CustomMediaSize" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Size</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth">
+				<psf:ParameterRef name="psk:PageMediaSizeMediaSizeWidth" />
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight">
+				<psf:ParameterRef name="psk:PageMediaSizeMediaSizeHeight" />
+			</psf:ScoredProperty>
+		</psf:Option>
+	</psf:Feature>
+	<psf:ParameterDef name="psk:PageMediaSizeMediaSizeWidth" SCOPE="PT_XL_ONLY" GPDGDLName="UIEVENT_MediaSizeWidth">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">microns</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">76200</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">76200</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:ParameterDef name="psk:PageMediaSizeMediaSizeHeight" SCOPE="PT_XL_ONLY" GPDGDLName="UIEVENT_MediaSizeHeight">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">microns</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">359918</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">76200</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">76200</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:Feature name="psk:PageMediaSize" SCOPE="PT_PS_ONLY" >
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Paper Size</psf:Value> 
+		</psf:Property>
+		<psf:Option name="psk:PSCustomMediaSize" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Size</psf:Value> 
+			</psf:Property>
+			<psf:ScoredProperty name="psk:PSWidth">
+				<psf:ParameterRef name="psk:PageMediaSizePSWidth" /> 
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:PSHeight">
+				<psf:ParameterRef name="psk:PageMediaSizePSHeight" /> 
+			</psf:ScoredProperty>
+		</psf:Option>
+	</psf:Feature>
+	<psf:ParameterDef name="psk:PageMediaSizePSWidth"  SCOPE="PT_PS_ONLY"  GPDGDLName="UIEVENT_MediaSizeWidth">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">microns</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">215900</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">76200</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">76200</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Optional</psf:Value> 
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:ParameterDef name="psk:PageMediaSizePSHeight"  SCOPE="PT_PS_ONLY"  GPDGDLName="UIEVENT_MediaSizeHeight">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">microns</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">359918</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">76200</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">76200</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Optional</psf:Value> 
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:Feature name="psk:JobNUpAllDocumentsContiguously" IsParent="true" GPDGDLName="JobNUpAllDocumentsContiguously">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Pages Per Sheet (NUp)</psf:Value>
+		</psf:Property>
+		<psf:Option constrained="psk:None">
+			<psf:ScoredProperty name="psk:PagesPerSheet" GPDGDLName="JobNUpAllDocumentsContiguously">
+				<psf:Value xsi:type="xsd:integer">1</psf:Value>
+			</psf:ScoredProperty>
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">1</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option constrained="psk:None">
+			<psf:ScoredProperty name="psk:PagesPerSheet" GPDGDLName="JobNUpAllDocumentsContiguously">
+				<psf:Value xsi:type="xsd:integer">2</psf:Value>
+			</psf:ScoredProperty>
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">2</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option constrained="psk:None">
+			<psf:ScoredProperty name="psk:PagesPerSheet" GPDGDLName="JobNUpAllDocumentsContiguously">
+				<psf:Value xsi:type="xsd:integer">4</psf:Value>
+			</psf:ScoredProperty>
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">4</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option constrained="psk:None">
+			<psf:ScoredProperty name="psk:PagesPerSheet" GPDGDLName="JobNUpAllDocumentsContiguously">
+				<psf:Value xsi:type="xsd:integer">6</psf:Value>
+			</psf:ScoredProperty>
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">6</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option constrained="psk:None">
+			<psf:ScoredProperty name="psk:PagesPerSheet" GPDGDLName="JobNUpAllDocumentsContiguously">
+				<psf:Value xsi:type="xsd:integer">9</psf:Value>
+			</psf:ScoredProperty>
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">9</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option constrained="psk:None">
+			<psf:ScoredProperty name="psk:PagesPerSheet" GPDGDLName="JobNUpAllDocumentsContiguously">
+				<psf:Value xsi:type="xsd:integer">16</psf:Value>
+			</psf:ScoredProperty>
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">16</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Feature name="psk:PresentationDirection" GPDGDLName="JobNUpPresentationDirection" ParentFeatureValueNotIn="JobNUpAllDocumentsContiguously.1">
+			<psf:Property name="psf:SelectionType">
+				<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+			</psf:Property>
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Pages Per Sheet Presentation</psf:Value>
+			</psf:Property>
+			<psf:Option name="psk:RightBottom" constrained="psk:None">
+				<psf:Property name="psk:DisplayName">
+					<psf:Value xsi:type="xsd:string">RightBottom</psf:Value>
+				</psf:Property>
+			</psf:Option>
+			<psf:Option name="psk:BottomRight" constrained="psk:None">
+				<psf:Property name="psk:DisplayName">
+					<psf:Value xsi:type="xsd:string">BottomRight</psf:Value>
+				</psf:Property>
+			</psf:Option>
+			<psf:Option name="psk:LeftBottom" constrained="psk:None">
+				<psf:Property name="psk:DisplayName">
+					<psf:Value xsi:type="xsd:string">LeftBottom</psf:Value>
+				</psf:Property>
+			</psf:Option>
+			<psf:Option name="psk:BottomLeft" constrained="psk:None">
+				<psf:Property name="psk:DisplayName">
+					<psf:Value xsi:type="xsd:string">BottomLeft</psf:Value>
+				</psf:Property>
+			</psf:Option>
+			<psf:Option name="psk:RightTop" constrained="psk:None">
+				<psf:Property name="psk:DisplayName">
+					<psf:Value xsi:type="xsd:string">RightTop</psf:Value>
+				</psf:Property>
+			</psf:Option>
+			<psf:Option name="psk:TopRight" constrained="psk:None">
+				<psf:Property name="psk:DisplayName">
+					<psf:Value xsi:type="xsd:string">TopRight</psf:Value>
+				</psf:Property>
+			</psf:Option>
+			<psf:Option name="psk:LeftTop" constrained="psk:None">
+				<psf:Property name="psk:DisplayName">
+					<psf:Value xsi:type="xsd:string">LeftTop</psf:Value>
+				</psf:Property>
+			</psf:Option>
+			<psf:Option name="psk:TopLeft" constrained="psk:None">
+				<psf:Property name="psk:DisplayName">
+					<psf:Value xsi:type="xsd:string">TopLeft</psf:Value>
+				</psf:Property>
+			</psf:Option>
+		</psf:Feature>
+	</psf:Feature>
+	<psf:Feature name="psk:JobBindAllDocuments" IsParent="true">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Booklet</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:Fold" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:BindingGutter" GPDGDLName="BindingGutter">
+				<psf:ParameterRef name="psk:JobBindAllDocumentsGutter" />
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:None" constrained="psk:None" GPDGDLName="NONE">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobBindAllDocumentsBindingEdge">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Booklet binding edge</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:Left" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Left</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:Right" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Right</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobBindAllDocumentsSheetsPerBundle">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Sheets per booklet bundle</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:1" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">1</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:2" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">2</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:3" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">3</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:5" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">5</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:8" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">8</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:16" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">16</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:Max" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Maximum</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobPrintFoldmark" ParentFeatureValueNotIn="JobBindAllDocuments.NONE">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Print booklet foldmark</psf:Value>
+		</psf:Property>		
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobBookletMaintain" GPDGDLName="MaintainOriginalBookletSize" ParentFeatureValueNotIn="JobBindAllDocuments.NONE">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Maintain original page size for booklet</psf:Value>
+		</psf:Property>		
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobBookletCover" IsParent="true" ParentFeatureValueNotIn="JobBindAllDocuments.NONE">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Create a booklet cover</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobBookletFFrontCover" ParentFeatureValueNotIn="JobBindAllDocuments.NONE,JobBookletCover.OFF">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Print on outside of front cover</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobBookletBFrontCover" ParentFeatureValueNotIn="JobBindAllDocuments.NONE,JobBookletCover.OFF">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Print on inside of front cover</psf:Value>
+		</psf:Property>		
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobBookletFBackCover" ParentFeatureValueNotIn="JobBindAllDocuments.NONE,JobBookletCover.OFF">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Print on inside of back cover</psf:Value>
+		</psf:Property>		
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobBookletBBackCover" ParentFeatureValueNotIn="JobBindAllDocuments.NONE,JobBookletCover.OFF">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Print on outside of back cover</psf:Value>
+		</psf:Property>		
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+		<psf:Feature name="ns0000:JobBookletCoverMediaType" GPDGDLName="BookletCoverMediaType" ParentFeatureValueNotIn="JobBindAllDocuments.NONE,JobBookletCover.OFF">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Booklet cover media type</psf:Value>
+		</psf:Property>
+		<!--
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use Printer Settings</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		-->
+		<psf:Option name="psk:AutoSelect" GPDGDLName="AUTOMATIC" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Automatic</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkPremiumPlain" GPDGDLName="LxkPremiumPlain" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Premium Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>			
+		<psf:Option name="ns0000:LxkRichColor" GPDGDLName="LxkRichColor" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">ColorLok Certified Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkHeavyPlain" GPDGDLName="LxkHeavyPlain" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkBusinessCard" GPDGDLName="LxkBusinessCard" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Business Card</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkMatteBrochureLight" GPDGDLName="LxkMatteBrochureLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet Matte Brochure</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkGlossyBrochureLight" GPDGDLName="LxkGlossyBrochureLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet Glossy Brochure</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicMatte" GPDGDLName="MattePhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Matte Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicGlossy" GPDGDLName="GLOSSY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Glossy</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicGlossy" GPDGDLName="LxkGlossyPhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Glossy Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<!--
+		<psf:Option name="psk:Photographic" GPDGDLName="LexmarkPhotoPaper" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Lexmark Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		-->
+		<!--
+		<psf:Option name="psk:PhotographicSemiGloss" GPDGDLName="LexmarkPerfectFinishPhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Lexmark PerfectFinish Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		-->
+		<psf:Option name="psk:Stationery" GPDGDLName="STATIONARY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Letterhead</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:TShirtTransfer" GPDGDLName="IronOnTransfer" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Iron-On Transfer</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<!--
+		<psf:Option name="psk:Inkjet" GPDGDLName="Inkjet" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		-->
+		<psf:Option name="ns0000:LxkVinyl" GPDGDLName="LxkVinyl" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Vinyl Labels</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkHeavyGlossy" GPDGDLName="LxkHeavyGlossy" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy Glossy</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<!--
+		<psf:Option name="ns0000:LxkMultiPurpose" GPDGDLName="LxkMultiPurpose" />
+		<psf:Option name="ns0000:LxkPhotoGreetingCard" GPDGDLName="LxkPhotoGreetingCard" />
+		<psf:Option name="ns0000:LxkAveryBusinessCard" />
+		<psf:Option name="ns0000:LxkBusinessCard" />
+		<psf:Option name="ns0000:LxkAveryLabel" />
+		<psf:Option name="ns0000:LxkCdDvdLabel" />
+		-->
+		<psf:Option name="ns0000:LxkHeavy" GPDGDLName="LxkHeavy" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="psk:Bond" GPDGDLName="BOND" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Bond</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Plain" GPDGDLName="STANDARD" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Label" GPDGDLName="LABEL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Labels</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:AutoSelect" GPDGDLName="AUTO" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkRecycled" GPDGDLName="LxkRecycled" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Recycled</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkRoughEnvelope" GPDGDLName="LxkRoughEnvelope" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Rough Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkPrePrinted" GPDGDLName="LxkPrePrinted" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Preprinted</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkColorPaper" GPDGDLName="LxkColorPaper" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Colored</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkLight" GPDGDLName="LxkLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Light</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:EnvelopePlain" GPDGDLName="ENVELOPEPLAIN" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkRough" GPDGDLName="LxkRough" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Rough/cotton</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Transparency" GPDGDLName="TRANSPARENCY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Transparency</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:CardStock" GPDGDLName="CARDSTOCK" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Card Stock</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom1" GPDGDLName="LxkCustom1" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 1</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom2" GPDGDLName="LxkCustom2" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 2</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom3" GPDGDLName="LxkCustom3" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 3</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom4" GPDGDLName="LxkCustom4" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 4</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom5" GPDGDLName="LxkCustom5" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 5</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom6" GPDGDLName="LxkCustom6" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 6</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobBookletCoverInputBin" GPDGDLName="BookletCoverInputBin" ParentFeatureValueNotIn="JobBindAllDocuments.NONE,JobBookletCover.OFF">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Booklet cover paper source</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:AutoSelect" GPDGDLName="FORMSOURCE" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Automatically Select</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:AutoSelect" GPDGDLName="USEPRINTER" SCOPE="PT_PS_ONLY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Cassette" GPDGDLName="CASSETTE" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Cassette</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Manual" GPDGDLName="MANUAL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual Paper</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Multipurpose" GPDGDLName="LxkMultipurpose" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Multipurpose Feeder</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkManualEnv" GPDGDLName="LxkManualEnv" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkFeeder1" GPDGDLName="LxkEnvelope" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope Feeder</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkFeeder2" GPDGDLName="Feeder 2">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Feedder 2</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray1" GPDGDLName="LxkTray1" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 1</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray2" GPDGDLName="LxkTray2" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 2</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkTray3" GPDGDLName="LxkTray3" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 3</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray4" GPDGDLName="LxkTray4" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 4</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray5" GPDGDLName="LxkTray5" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 5</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray6" GPDGDLName="LxkTray6" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 6</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray7" GPDGDLName="LxkTray7" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 7</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray8" GPDGDLName="LxkTray8" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 8</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray9" GPDGDLName="LxkTray9" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 9</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray10" GPDGDLName="LxkTray10" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 10</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:ParameterDef name="psk:JobBindAllDocumentsGutter" SCOPE="DONOTDELETE" ParentFeatureValueNotIn="JobBindAllDocuments.NONE">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+        <psf:Value xsi:type="xsd:string">Booklet binding gutter width</psf:Value>
+      </psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">2147483647</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">microns</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:Feature name="ns0000:JobNUpBorders" ParentFeatureValueNotIn="JobNUpAllDocumentsContiguously.1" ParentFeatureValueIn="JobBindAllDocuments.NONE">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Pages Per Sheet Borders</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:None" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">None</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:Solid" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Solid</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:Shadow" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Shadow</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:SolidShadow" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">SolidShadow</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobCollationOrigin">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Collation performance</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:PRINTER" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer-based</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:HOST" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use host-based</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobDuplexSupport" GPDGDLName="JobDuplexSupport">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Advanced Duplex Settings</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None" GPDGDLName="USEPRINTER">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer setting</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:None" constrained="psk:None" GPDGDLName="NONE">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Print on one side only</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:Auto" constrained="psk:None" GPDGDLName="AUTO">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Print on both sides</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Manual" constrained="psk:None" GPDGDLName="MANUAL">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Print on both sides manually</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="psk:JobDuplexAllDocumentsContiguously" GPDGDLName="Duplex">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Two-sided Printing</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:OneSided" constrained="psk:None" GPDGDLName="NONE">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">None</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:TwoSidedLongEdge" constrained="psk:None" GPDGDLName="VERTICAL">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Flip on long edge</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:DuplexMode" GPDGDLName="JobDuplexSupport">
+				<psf:Value xsi:type="xsd:string">Manual</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:TwoSidedShortEdge" constrained="psk:None" GPDGDLName="HORIZONTAL">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Flip on short edge</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:DuplexMode" GPDGDLName="JobDuplexSupport">
+				<psf:Value xsi:type="xsd:string">Automatic</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="psk:PageOrientation" GPDGDLName="Orientation">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Orientation</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:Portrait" constrained="psk:None" GPDGDLName="PORTRAIT">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Portrait</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Landscape" constrained="psk:None" GPDGDLName="LANDSCAPE_CC90">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Landscape</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<!--psf:Feature name="psk:PagePoster">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Poster</psf:Value>
+		</psf:Property>
+		<psf:Option>
+			<psf:ScoredProperty name="psk:SheetsPerPage">
+				<psf:Value xsi:type="xsd:integer">1</psf:Value>
+			</psf:ScoredProperty>
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option>
+			<psf:ScoredProperty name="psk:SheetsPerPage">
+				<psf:Value xsi:type="xsd:integer">4</psf:Value>
+			</psf:ScoredProperty>
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">2 x 2 (4 pages)</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option>
+			<psf:ScoredProperty name="psk:SheetsPerPage">
+				<psf:Value xsi:type="xsd:integer">9</psf:Value>
+			</psf:ScoredProperty>
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">3 x 3 (9 pages)</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option>
+			<psf:ScoredProperty name="psk:SheetsPerPage">
+				<psf:Value xsi:type="xsd:integer">16</psf:Value>
+			</psf:ScoredProperty>
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">4 x 4 (16 pages)</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature-->
+	<psf:Feature name="psk:PagePoster">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Poster</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:_1" constrained="psk:None" GPDGDLName="1">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:_4" constrained="psk:None" GPDGDLName="4">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">2 x 2 (4 pages)</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:_9" constrained="psk:None" GPDGDLName="9">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">3 x 3 (9 pages)</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:_16" constrained="psk:None" GPDGDLName="16">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">4 x 4 (16 pages)</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:PagePosterCropMarks">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Poster Crop Marks</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:PagePosterOverlap">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Poster page overlap</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:NONE" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">None</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_5mm" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">0.197 in / 5 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_25in" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">0.25 in / 6.35 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_10mm" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">0.394 in / 10 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_50in" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">0.5 in / 12.7 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_15mm" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">0.591 in / 15 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_75in" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">0.75 in / 19.05 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_20mm" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">0.788 in / 20 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_25mm" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">0.985 in / 25 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_1in" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">1 in / 25.4 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_30mm" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">1.182 in / 30 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_1_25in" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">1.25 in / 31.75 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_35mm" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">1.379 in / 35 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_1_50in" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">1.5 in / 38.1 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_40mm" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">1.576 in / 40 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_1_75in" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">1.75 in / 44.45 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_45mm" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">1.773 in / 45 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_50mm" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">1.97 in / 50 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OVLP_2in" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">2 in / 50.8 mm</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:PageRotate180">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Rotate 180</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:ParameterDef name="ns0000:JobColorTonerDarknessValue" GPDGDLName="ColorTonerDarknessValue">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Color toner darkness value</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">3</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">5</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">Darkness</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:ParameterDef name="ns0000:JobMonoTonerDarknessValue" GPDGDLName="MonoTonerDarknessValue">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Mono toner darkness value</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">8</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">10</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">Darkness</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>	
+	<!--
+Finisher: PT
+
+ <psf:Feature name="ns0000:JobFinisherFold">
+  <psf:Option name="ns0000:Off" /> 
+ </psf:Feature>
+
+ <psf:Feature name="ns0000:JobFinisherFold">
+ <psf:Option name="ns0000:On">
+ <psf:ScoredProperty name="ns0000:FoldBundleSize">
+  <psf:Value xsi:type="xsd:integer">1</psf:Value> 
+  </psf:ScoredProperty>
+ <psf:ScoredProperty name="ns0000:FoldDirection">
+  <psf:Value xsi:type="xsd:string">Down</psf:Value> 
+  </psf:ScoredProperty>
+  </psf:Option>
+  </psf:Feature>
+-->
+	<!--
+Finisher: PC
+-->
+	<psf:Feature name="ns0000:JobJobOffset">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Offset</psf:Value>
+		</psf:Property>	
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer setting</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="BetweenCopies">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="psk:JobStapleAllDocuments">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value> 
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Staple</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:None" constrained="psk:None" GPDGDLName="NONE">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:StapleTopLeft" constrained="psk:None" GPDGDLName="STAPLETOPLEFT">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Top left</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:StapleBottomLeft" constrained="psk:None" GPDGDLName="STAPLEBOTTOMLEFT">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Bottom left</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:StapleBottomRight" constrained="psk:None" GPDGDLName="STAPLEBOTTOMRIGHT">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Bottom right</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:StapleTopRight" constrained="psk:None" GPDGDLName="STAPLETOPRIGHT">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Top right</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:StapleDualLeft" constrained="psk:None" GPDGDLName="STAPLEDUALLEFT">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Dual left</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:StapleDualRight" constrained="psk:None" GPDGDLName="STAPLEDUALRIGHT">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Dual right</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:StapleDualTop" constrained="psk:None" GPDGDLName="STAPLEDUALTOP">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Dual top</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:StapleDualBottom" constrained="psk:None" GPDGDLName="STAPLEDUALBOTTOM">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Dual bottom</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobHolePunchLayout" GPDGDLName="NumberOfHolePunch">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Hole punch</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer setting</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:_2" constrained="psk:DeviceSettings" GPDGDLName="2">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">2-hole</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:_3" constrained="psk:DeviceSettings" GPDGDLName="3">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">3-hole</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:_4" constrained="psk:DeviceSettings" GPDGDLName="4">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">4-hole</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:NONE" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobFinisherFold">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Fold</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:Off" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:FOLD" constrained="psk:DeviceSettings">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Fold</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:FOLDANDSTAPLE" constrained="psk:DeviceSettings">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Fold and center staple</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:FOLDINDIVIDUALPAGES" constrained="psk:DeviceSettings">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Fold individual pages</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:TRIFOLD" constrained="psk:DeviceSettings">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Trifold individual pages</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<!--
+
+HolePunch: PT
+ <psf:Feature name="psk:JobHolePunch">
+ <psf:Option name="psk:BottomEdge">
+ <psf:ScoredProperty name="psk:HoleLayout">
+  <psf:Value xsi:type="xsd:string">StandardThree</psf:Value> 
+  </psf:ScoredProperty>
+  </psf:Option>
+  </psf:Feature>
+
+<psf:Feature name="ns0000:NumberOfHolePunch">
+  <psf:Option name="ns0000:_3" /> 
+</psf:Feature>
+
+-->
+	<!--
+HolePunch: PC
+-->
+	<psf:Property name="ns0000:JobHostID" SCOPE="PTONLY">
+		<psf:Value xsi:type="xsd:string">High</psf:Value>
+	</psf:Property>
+	<psf:Property name="ns0000:JobUserID" SCOPE="PTONLY">
+		<psf:Value xsi:type="xsd:string">High</psf:Value>
+	</psf:Property>
+		<psf:Feature name="ns0000:JobTonerDarknessValue" GPDGDLName="GPDTonerDarkness">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Toner darkness</psf:Value>
+		</psf:Property>	
+		<psf:Option name="ns0000:AUTO" GPDGDLName="AUTO">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer setting</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:VALUE" GPDGDLName="VALUE">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use toner darkness value</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobColorCorrection">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Color correction</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer setting</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OFF" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:AUTO" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Auto</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:MANUAL" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobCcRgbImages">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Manual color correction for images</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer setting</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:sRGB_DISPLAY" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">sRGB Display</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:sRGB_VIVID" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">sRGB Vivid</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:DISPLAY_TRUE_BLACK" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Display - True Black</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:VIVID" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Vivid</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobCcRgbText">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Manual color correction for text</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer setting</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:sRGB_DISPLAY" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">sRGB Display</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:sRGB_VIVID" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">sRGB Vivid</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:DISPLAY_TRUE_BLACK" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Display - True Black</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:VIVID" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Vivid</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobCcRgbGraphics">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Manual color correction for graphics</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer setting</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:sRGB_DISPLAY" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">sRGB Display</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:sRGB_VIVID" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">sRGB Vivid</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:DISPLAY_TRUE_BLACK" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Display - True Black</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:VIVID" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Vivid</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobCcCmykImgGphTxt">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Manual color correction for CMYK</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer setting</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:VIVID_CMYK" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Vivid CMYK</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:EURO_CMYK" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">EURO CMYK</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:US_CMYK" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">US CMYK</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobRGBCorrection" IsParent="true">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">RGB Correction</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None" GPDGDLName="USEPRINTER" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="psk:Manual" constrained="psk:None" GPDGDLName="MANUAL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+	</psf:Feature>
+	<psf:ParameterDef name="ns0000:JobImageBrightness" GPDGDLName="JobRGBBrightness" ParentFeatureValueIn="JobRGBCorrection.MANUAL">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">RGB Brightness</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">6</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">-6</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">RGBCorrection</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:ParameterDef name="ns0000:JobImageContrast" GPDGDLName="JobRGBContrast" ParentFeatureValueIn="JobRGBCorrection.MANUAL">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">RGB Contrast</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">5</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">RGBContrast</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:ParameterDef name="ns0000:JobImageSaturation" GPDGDLName="JobRGBSaturation" ParentFeatureValueIn="JobRGBCorrection.MANUAL">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">RGB Saturation</psf:Value>
+		</psf:Property>		
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">5</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">JobRGBSaturation</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:Feature name="ns0000:JobGreyCorrection" IsParent="true">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Grey Correction</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None" GPDGDLName="USEPRINTER" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="psk:Manual" constrained="psk:None" GPDGDLName="MANUAL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+	</psf:Feature>
+	<psf:ParameterDef name="ns0000:JobGreyBrightness" GPDGDLName="JobGreyBrightness" ParentFeatureValueIn="JobGreyCorrection.MANUAL">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Grey Brightness</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">6</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">-6</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">JobGreyBrightness</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:ParameterDef name="ns0000:JobGreyContrast" GPDGDLName="JobGreyContrast" ParentFeatureValueIn="JobGreyCorrection.MANUAL">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Grey Contrast</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">5</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">GreyContrast</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:Feature name="ns0000:JobEnhanceFineLines">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Halftone</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:AutoSelect" constrained="psk:None" GPDGDLName="AUTO">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Normal</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Detail</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobJCLJobEnhanceFineLines">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Halftone</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:AUTO" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer setting</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:OFF" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Normal</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:ON" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Detail</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobColorBalance" IsParent="true">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Color balance</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None" GPDGDLName="USEPRINTER" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="psk:Manual" constrained="psk:None" GPDGDLName="MANUAL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+	</psf:Feature>
+	<psf:ParameterDef name="ns0000:JobColorBalanceCyan" GPDGDLName="JobCbRedCyn" ParentFeatureValueIn="JobColorBalance.MANUAL">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Color balance Cyan</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">5</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">-5</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">JobColor</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:ParameterDef name="ns0000:JobColorBalanceMagenta" GPDGDLName="JobCbGrnMag" ParentFeatureValueIn="JobColorBalance.MANUAL">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Color balance Magenta</psf:Value>
+		</psf:Property>		
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">5</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">-5</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">JobColor</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:ParameterDef name="ns0000:JobColorBalanceYellow" GPDGDLName="JobCbBluYel" ParentFeatureValueIn="JobColorBalance.MANUAL">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Color balance Yellow</psf:Value>
+		</psf:Property>		
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">5</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">-5</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">JobColor</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:ParameterDef name="ns0000:JobColorBalanceBlack" GPDGDLName="JobCbWhtBlk" ParentFeatureValueIn="JobColorBalance.MANUAL">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Color balance Black</psf:Value>
+		</psf:Property>		
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">0</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">5</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">-5</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">JobColor</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:Feature name="ns0000:JobColorMatching">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Color Matching</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobColorMatchingType">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Color matching type</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:Contrast">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Contrast(for images)</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="ns0000:Saturation">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Saturation(for business graphics)</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="ns0000:Colorimetric">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Colorimetric(for closest colors)</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobPixelBoost">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Pixel boost</psf:Value>
+		</psf:Property>	
+		<psf:Option name="ns0000:OFF" constrained="psk:None" GPDGDLName="OFF" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None" GPDGDLName="USEPRINTER" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="ns0000:FONT" constrained="psk:None" GPDGDLName="FONT" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Fonts</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="ns0000:HORIZONTALLY" constrained="psk:None" GPDGDLName="HORIZONTALLY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Horizontally</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="ns0000:VERTICALLY" constrained="psk:None" GPDGDLName="VERTICALLY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Vertically</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="ns0000:BOTHDIRECTIONS" constrained="psk:None" GPDGDLName="BOTHDIRECTIONS" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Both directions</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobColorSaver">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">ColorSaver™</psf:Value>
+		</psf:Property>	
+		<psf:Option name="ns0000:AutoSelect" constrained="psk:None" GPDGDLName="AUTO" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="ns0000:On" constrained="psk:None" GPDGDLName="ON" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+		<psf:Option name="ns0000:Off" constrained="psk:None" GPDGDLName="OFF" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>			
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobLxkDuplexInstructions" GPDGDLName="JobLxkDuplexInstructions">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Manual Duplex Instruction Page</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<!--psf:Feature name="ns0000:JobImageSharpening" GPDGDLName="JobSharpenOutput">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:Off" GPDGDLName="OFF" />
+		<psf:Option name="ns0000:AUTOSHARPEN" GPDGDLName="ON" />
+		<psf:Option name="ns0000:AUTOSOFTEN" />
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobLxkColorPreference" GPDGDLName="JobColorPreference">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:Auto" GPDGDLName="AUTO" />
+		<psf:Option name="ns0000:Natural" GPDGDLName="NATURAL" />
+		<psf:Option name="ns0000:Vivid" GPDGDLName="VIVID" />
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobLxkPrintMode" GPDGDLName="JobAdvancedColorOptions">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:Auto" GPDGDLName="AUTO" />
+		<psf:Option name="ns0000:ICC" GPDGDLName="ICC_TEST" />
+	</psf:Feature-->
+	<psf:Feature name="ns0000:JobMultipleInputOption" GPDGDLName="UseMultipleInputSources" IsParent="true">
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Use multiple input options</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobMIOFrontCover" GPDGDLName="FrontCoverDifferent" IsParent="true" ParentFeatureValueIn="UseMultipleInputSources.ON">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Enable front cover</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobFrontCoverInputBin" GPDGDLName="FrontCoverInputBin" ParentFeatureValueIn="UseMultipleInputSources.ON,FrontCoverDifferent.ON">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">MIO Front cover paper source</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:AutoSelect" GPDGDLName="FORMSOURCE" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Automatically Select</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:AutoSelect" GPDGDLName="USEPRINTER" SCOPE="PT_PS_ONLY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Cassette" GPDGDLName="CASSETTE" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Cassette</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Manual" GPDGDLName="MANUAL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual Paper</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Multipurpose" GPDGDLName="LxkMultipurpose" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Multipurpose Feeder</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkManualEnv" GPDGDLName="LxkManualEnv" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkFeeder1" GPDGDLName="LxkEnvelope" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope Feeder</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkFeeder2" GPDGDLName="Feeder 2">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Feedder 2</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray1" GPDGDLName="LxkTray1" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 1</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray2" GPDGDLName="LxkTray2" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 2</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkTray3" GPDGDLName="LxkTray3" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 3</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray4" GPDGDLName="LxkTray4" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 4</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray5" GPDGDLName="LxkTray5" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 5</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray6" GPDGDLName="LxkTray6" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 6</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray7" GPDGDLName="LxkTray7" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 7</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray8" GPDGDLName="LxkTray8" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 8</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray9" GPDGDLName="LxkTray9" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 9</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray10" GPDGDLName="LxkTray10" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 10</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobFrontCoverMediaType" GPDGDLName="FrontCoverMediaType" ParentFeatureValueIn="UseMultipleInputSources.ON,FrontCoverDifferent.ON">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">MIO Front cover media type</psf:Value>
+		</psf:Property>
+		<!--
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use Printer Settings</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		-->
+		<psf:Option name="psk:AutoSelect" GPDGDLName="AUTOMATIC" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Automatic</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkPremiumPlain" GPDGDLName="LxkPremiumPlain" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Premium Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>			
+		<psf:Option name="ns0000:LxkRichColor" GPDGDLName="LxkRichColor" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">ColorLok Certified Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkHeavyPlain" GPDGDLName="LxkHeavyPlain" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkBusinessCard" GPDGDLName="LxkBusinessCard" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Business Card</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkMatteBrochureLight" GPDGDLName="LxkMatteBrochureLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet Matte Brochure</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkGlossyBrochureLight" GPDGDLName="LxkGlossyBrochureLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet Glossy Brochure</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicMatte" GPDGDLName="MattePhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Matte Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicGlossy" GPDGDLName="GLOSSY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Glossy</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicGlossy" GPDGDLName="LxkGlossyPhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Glossy Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<!--
+		<psf:Option name="psk:Photographic" GPDGDLName="LexmarkPhotoPaper" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Lexmark Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		-->
+		<!--
+		<psf:Option name="psk:PhotographicSemiGloss" GPDGDLName="LexmarkPerfectFinishPhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Lexmark PerfectFinish Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		-->
+		<psf:Option name="psk:Stationery" GPDGDLName="STATIONARY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Letterhead</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:TShirtTransfer" GPDGDLName="IronOnTransfer" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Iron-On Transfer</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<!--
+		<psf:Option name="psk:Inkjet" GPDGDLName="Inkjet" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		-->
+		<psf:Option name="ns0000:LxkVinyl" GPDGDLName="LxkVinyl" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Vinyl Labels</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkHeavyGlossy" GPDGDLName="LxkHeavyGlossy" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy Glossy</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<!--
+		<psf:Option name="ns0000:LxkMultiPurpose" GPDGDLName="LxkMultiPurpose" />
+		<psf:Option name="ns0000:LxkPhotoGreetingCard" GPDGDLName="LxkPhotoGreetingCard" />
+		<psf:Option name="ns0000:LxkAveryBusinessCard" />
+		<psf:Option name="ns0000:LxkBusinessCard" />
+		<psf:Option name="ns0000:LxkAveryLabel" />
+		<psf:Option name="ns0000:LxkCdDvdLabel" />
+		-->
+		<psf:Option name="ns0000:LxkHeavy" GPDGDLName="LxkHeavy" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="psk:Bond" GPDGDLName="BOND" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Bond</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Plain" GPDGDLName="STANDARD" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Label" GPDGDLName="LABEL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Labels</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:AutoSelect" GPDGDLName="AUTO" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkRecycled" GPDGDLName="LxkRecycled" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Recycled</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkRoughEnvelope" GPDGDLName="LxkRoughEnvelope" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Rough Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkPrePrinted" GPDGDLName="LxkPrePrinted" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Preprinted</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkColorPaper" GPDGDLName="LxkColorPaper" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Colored</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkLight" GPDGDLName="LxkLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Light</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:EnvelopePlain" GPDGDLName="ENVELOPEPLAIN" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkRough" GPDGDLName="LxkRough" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Rough/cotton</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Transparency" GPDGDLName="TRANSPARENCY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Transparency</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:CardStock" GPDGDLName="CARDSTOCK" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Card Stock</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom1" GPDGDLName="LxkCustom1" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 1</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom2" GPDGDLName="LxkCustom2" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 2</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom3" GPDGDLName="LxkCustom3" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 3</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom4" GPDGDLName="LxkCustom4" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 4</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom5" GPDGDLName="LxkCustom5" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 5</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom6" GPDGDLName="LxkCustom6" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 6</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobMIOFirstPage" GPDGDLName="FirstPageDifferent" IsParent="true" ParentFeatureValueIn="UseMultipleInputSources.ON">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Enable First page</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobFirstPageInputBin" GPDGDLName="FirstPageInputBin" ParentFeatureValueIn="UseMultipleInputSources.ON,FirstPageDifferent.ON">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">MIO First page paper source</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:AutoSelect" GPDGDLName="FORMSOURCE" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Automatically Select</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:AutoSelect" GPDGDLName="USEPRINTER" SCOPE="PT_PS_ONLY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Cassette" GPDGDLName="CASSETTE" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Cassette</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Manual" GPDGDLName="MANUAL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual Paper</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Multipurpose" GPDGDLName="LxkMultipurpose" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Multipurpose Feeder</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkManualEnv" GPDGDLName="LxkManualEnv" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkFeeder1" GPDGDLName="LxkEnvelope" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope Feeder</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkFeeder2" GPDGDLName="Feeder 2">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Feedder 2</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray1" GPDGDLName="LxkTray1" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 1</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray2" GPDGDLName="LxkTray2" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 2</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkTray3" GPDGDLName="LxkTray3" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 3</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray4" GPDGDLName="LxkTray4" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 4</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray5" GPDGDLName="LxkTray5" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 5</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray6" GPDGDLName="LxkTray6" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 6</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray7" GPDGDLName="LxkTray7" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 7</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray8" GPDGDLName="LxkTray8" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 8</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray9" GPDGDLName="LxkTray9" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 9</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray10" GPDGDLName="LxkTray10" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 10</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobFirstPageMediaType" GPDGDLName="FirstPageMediaType" ParentFeatureValueIn="UseMultipleInputSources.ON,FirstPageDifferent.ON">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">MIO First page media type</psf:Value>
+		</psf:Property>
+		<!--
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use Printer Settings</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		-->
+		<psf:Option name="psk:AutoSelect" GPDGDLName="AUTOMATIC" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Automatic</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkPremiumPlain" GPDGDLName="LxkPremiumPlain" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Premium Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>			
+		<psf:Option name="ns0000:LxkRichColor" GPDGDLName="LxkRichColor" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">ColorLok Certified Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkHeavyPlain" GPDGDLName="LxkHeavyPlain" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkBusinessCard" GPDGDLName="LxkBusinessCard" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Business Card</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkMatteBrochureLight" GPDGDLName="LxkMatteBrochureLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet Matte Brochure</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkGlossyBrochureLight" GPDGDLName="LxkGlossyBrochureLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet Glossy Brochure</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicMatte" GPDGDLName="MattePhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Matte Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicGlossy" GPDGDLName="GLOSSY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Glossy</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicGlossy" GPDGDLName="LxkGlossyPhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Glossy Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<!--
+		<psf:Option name="psk:Photographic" GPDGDLName="LexmarkPhotoPaper" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Lexmark Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		-->
+		<!--
+		<psf:Option name="psk:PhotographicSemiGloss" GPDGDLName="LexmarkPerfectFinishPhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Lexmark PerfectFinish Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		-->
+		<psf:Option name="psk:Stationery" GPDGDLName="STATIONARY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Letterhead</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:TShirtTransfer" GPDGDLName="IronOnTransfer" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Iron-On Transfer</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<!--
+		<psf:Option name="psk:Inkjet" GPDGDLName="Inkjet" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		-->
+		<psf:Option name="ns0000:LxkVinyl" GPDGDLName="LxkVinyl" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Vinyl Labels</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkHeavyGlossy" GPDGDLName="LxkHeavyGlossy" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy Glossy</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<!--
+		<psf:Option name="ns0000:LxkMultiPurpose" GPDGDLName="LxkMultiPurpose" />
+		<psf:Option name="ns0000:LxkPhotoGreetingCard" GPDGDLName="LxkPhotoGreetingCard" />
+		<psf:Option name="ns0000:LxkAveryBusinessCard" />
+		<psf:Option name="ns0000:LxkBusinessCard" />
+		<psf:Option name="ns0000:LxkAveryLabel" />
+		<psf:Option name="ns0000:LxkCdDvdLabel" />
+		-->
+		<psf:Option name="ns0000:LxkHeavy" GPDGDLName="LxkHeavy" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="psk:Bond" GPDGDLName="BOND" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Bond</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Plain" GPDGDLName="STANDARD" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Label" GPDGDLName="LABEL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Labels</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:AutoSelect" GPDGDLName="AUTO" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkRecycled" GPDGDLName="LxkRecycled" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Recycled</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkRoughEnvelope" GPDGDLName="LxkRoughEnvelope" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Rough Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkPrePrinted" GPDGDLName="LxkPrePrinted" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Preprinted</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkColorPaper" GPDGDLName="LxkColorPaper" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Colored</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkLight" GPDGDLName="LxkLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Light</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:EnvelopePlain" GPDGDLName="ENVELOPEPLAIN" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkRough" GPDGDLName="LxkRough" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Rough/cotton</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Transparency" GPDGDLName="TRANSPARENCY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Transparency</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:CardStock" GPDGDLName="CARDSTOCK" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Card Stock</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom1" GPDGDLName="LxkCustom1" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 1</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom2" GPDGDLName="LxkCustom2" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 2</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom3" GPDGDLName="LxkCustom3" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 3</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom4" GPDGDLName="LxkCustom4" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 4</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom5" GPDGDLName="LxkCustom5" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 5</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom6" GPDGDLName="LxkCustom6" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 6</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobMIOLastPage" GPDGDLName="LastPageDifferent" IsParent="true" ParentFeatureValueIn="UseMultipleInputSources.ON">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Enable last page</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobLastPageInputBin" GPDGDLName="LastPageInputBin" ParentFeatureValueIn="UseMultipleInputSources.ON,LastPageDifferent.ON">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">MIO Last page paper source</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:AutoSelect" GPDGDLName="FORMSOURCE" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Automatically Select</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:AutoSelect" GPDGDLName="USEPRINTER" SCOPE="PT_PS_ONLY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Cassette" GPDGDLName="CASSETTE" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Cassette</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Manual" GPDGDLName="MANUAL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual Paper</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Multipurpose" GPDGDLName="LxkMultipurpose" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Multipurpose Feeder</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkManualEnv" GPDGDLName="LxkManualEnv" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkFeeder1" GPDGDLName="LxkEnvelope" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope Feeder</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkFeeder2" GPDGDLName="Feeder 2">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Feedder 2</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray1" GPDGDLName="LxkTray1" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 1</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray2" GPDGDLName="LxkTray2" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 2</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkTray3" GPDGDLName="LxkTray3" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 3</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray4" GPDGDLName="LxkTray4" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 4</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray5" GPDGDLName="LxkTray5" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 5</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray6" GPDGDLName="LxkTray6" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 6</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray7" GPDGDLName="LxkTray7" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 7</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray8" GPDGDLName="LxkTray8" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 8</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray9" GPDGDLName="LxkTray9" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 9</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray10" GPDGDLName="LxkTray10" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 10</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobLastPageMediaType" GPDGDLName="LastPageMediaType" ParentFeatureValueIn="UseMultipleInputSources.ON,LastPageDifferent.ON">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">MIO Last page media type</psf:Value>
+		</psf:Property>
+		<!--
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use Printer Settings</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		-->
+		<psf:Option name="psk:AutoSelect" GPDGDLName="AUTOMATIC" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Automatic</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkPremiumPlain" GPDGDLName="LxkPremiumPlain" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Premium Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>			
+		<psf:Option name="ns0000:LxkRichColor" GPDGDLName="LxkRichColor" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">ColorLok Certified Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkHeavyPlain" GPDGDLName="LxkHeavyPlain" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkBusinessCard" GPDGDLName="LxkBusinessCard" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Business Card</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkMatteBrochureLight" GPDGDLName="LxkMatteBrochureLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet Matte Brochure</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkGlossyBrochureLight" GPDGDLName="LxkGlossyBrochureLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet Glossy Brochure</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicMatte" GPDGDLName="MattePhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Matte Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicGlossy" GPDGDLName="GLOSSY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Glossy</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicGlossy" GPDGDLName="LxkGlossyPhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Glossy Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<!--
+		<psf:Option name="psk:Photographic" GPDGDLName="LexmarkPhotoPaper" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Lexmark Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		-->
+		<!--
+		<psf:Option name="psk:PhotographicSemiGloss" GPDGDLName="LexmarkPerfectFinishPhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Lexmark PerfectFinish Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		-->
+		<psf:Option name="psk:Stationery" GPDGDLName="STATIONARY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Letterhead</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:TShirtTransfer" GPDGDLName="IronOnTransfer" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Iron-On Transfer</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<!--
+		<psf:Option name="psk:Inkjet" GPDGDLName="Inkjet" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		-->
+		<psf:Option name="ns0000:LxkVinyl" GPDGDLName="LxkVinyl" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Vinyl Labels</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkHeavyGlossy" GPDGDLName="LxkHeavyGlossy" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy Glossy</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<!--
+		<psf:Option name="ns0000:LxkMultiPurpose" GPDGDLName="LxkMultiPurpose" />
+		<psf:Option name="ns0000:LxkPhotoGreetingCard" GPDGDLName="LxkPhotoGreetingCard" />
+		<psf:Option name="ns0000:LxkAveryBusinessCard" />
+		<psf:Option name="ns0000:LxkBusinessCard" />
+		<psf:Option name="ns0000:LxkAveryLabel" />
+		<psf:Option name="ns0000:LxkCdDvdLabel" />
+		-->
+		<psf:Option name="ns0000:LxkHeavy" GPDGDLName="LxkHeavy" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="psk:Bond" GPDGDLName="BOND" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Bond</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Plain" GPDGDLName="STANDARD" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Label" GPDGDLName="LABEL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Labels</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:AutoSelect" GPDGDLName="AUTO" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkRecycled" GPDGDLName="LxkRecycled" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Recycled</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkRoughEnvelope" GPDGDLName="LxkRoughEnvelope" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Rough Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkPrePrinted" GPDGDLName="LxkPrePrinted" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Preprinted</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkColorPaper" GPDGDLName="LxkColorPaper" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Colored</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkLight" GPDGDLName="LxkLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Light</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:EnvelopePlain" GPDGDLName="ENVELOPEPLAIN" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkRough" GPDGDLName="LxkRough" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Rough/cotton</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Transparency" GPDGDLName="TRANSPARENCY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Transparency</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:CardStock" GPDGDLName="CARDSTOCK" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Card Stock</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom1" GPDGDLName="LxkCustom1" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 1</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom2" GPDGDLName="LxkCustom2" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 2</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom3" GPDGDLName="LxkCustom3" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 3</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom4" GPDGDLName="LxkCustom4" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 4</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom5" GPDGDLName="LxkCustom5" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 5</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom6" GPDGDLName="LxkCustom6" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 6</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobMIOBackCover" GPDGDLName="BackCoverDifferent" IsParent="true" ParentFeatureValueIn="UseMultipleInputSources.ON">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Enable back cover</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobBackCoverInputBin" GPDGDLName="BackCoverInputBin" ParentFeatureValueIn="UseMultipleInputSources.ON,BackCoverDifferent.ON">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">MIO Back cover paper source</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:AutoSelect" GPDGDLName="FORMSOURCE" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Automatically Select</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:AutoSelect" GPDGDLName="USEPRINTER" SCOPE="PT_PS_ONLY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Cassette" GPDGDLName="CASSETTE" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Cassette</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Manual" GPDGDLName="MANUAL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual Paper</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Multipurpose" GPDGDLName="LxkMultipurpose" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Multipurpose Feeder</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkManualEnv" GPDGDLName="LxkManualEnv" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkFeeder1" GPDGDLName="LxkEnvelope" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope Feeder</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkFeeder2" GPDGDLName="Feeder 2">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Feedder 2</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray1" GPDGDLName="LxkTray1" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 1</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray2" GPDGDLName="LxkTray2" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 2</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkTray3" GPDGDLName="LxkTray3" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 3</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray4" GPDGDLName="LxkTray4" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 4</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray5" GPDGDLName="LxkTray5" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 5</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray6" GPDGDLName="LxkTray6" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 6</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray7" GPDGDLName="LxkTray7" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 7</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray8" GPDGDLName="LxkTray8" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 8</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray9" GPDGDLName="LxkTray9" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 9</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray10" GPDGDLName="LxkTray10" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 10</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobBackCoverMediaType" GPDGDLName="BackCoverMediaType" ParentFeatureValueIn="UseMultipleInputSources.ON,BackCoverDifferent.ON">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">MIO Back cover media type</psf:Value>
+		</psf:Property>
+		<!--
+		<psf:Option name="ns0000:USEPRINTER" constrained="psk:None" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use Printer Settings</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		-->
+		<psf:Option name="psk:AutoSelect" GPDGDLName="AUTOMATIC" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Automatic</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkPremiumPlain" GPDGDLName="LxkPremiumPlain" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Premium Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>			
+		<psf:Option name="ns0000:LxkRichColor" GPDGDLName="LxkRichColor" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">ColorLok Certified Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkHeavyPlain" GPDGDLName="LxkHeavyPlain" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkBusinessCard" GPDGDLName="LxkBusinessCard" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Business Card</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkMatteBrochureLight" GPDGDLName="LxkMatteBrochureLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet Matte Brochure</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkGlossyBrochureLight" GPDGDLName="LxkGlossyBrochureLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet Glossy Brochure</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicMatte" GPDGDLName="MattePhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Matte Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicGlossy" GPDGDLName="GLOSSY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Glossy</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:PhotographicGlossy" GPDGDLName="LxkGlossyPhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Glossy Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<!--
+		<psf:Option name="psk:Photographic" GPDGDLName="LexmarkPhotoPaper" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Lexmark Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		-->
+		<!--
+		<psf:Option name="psk:PhotographicSemiGloss" GPDGDLName="LexmarkPerfectFinishPhoto" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Lexmark PerfectFinish Photo</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		-->
+		<psf:Option name="psk:Stationery" GPDGDLName="STATIONARY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Letterhead</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:TShirtTransfer" GPDGDLName="IronOnTransfer" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Iron-On Transfer</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<!--
+		<psf:Option name="psk:Inkjet" GPDGDLName="Inkjet" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Inkjet</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		-->
+		<psf:Option name="ns0000:LxkVinyl" GPDGDLName="LxkVinyl" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Vinyl Labels</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkHeavyGlossy" GPDGDLName="LxkHeavyGlossy" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy Glossy</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkHeavy" GPDGDLName="LxkHeavy" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Heavy</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Bond" GPDGDLName="BOND" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Bond</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Plain" GPDGDLName="STANDARD" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Plain</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Label" GPDGDLName="LABEL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Labels</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:AutoSelect" GPDGDLName="AUTO" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkRecycled" GPDGDLName="LxkRecycled" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Recycled</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkPrePrinted" GPDGDLName="LxkPrePrinted" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Preprinted</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkRoughEnvelope" GPDGDLName="LxkRoughEnvelope" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Rough Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkColorPaper" GPDGDLName="LxkColorPaper" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Colored</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkLight" GPDGDLName="LxkLight" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Light</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:EnvelopePlain" GPDGDLName="ENVELOPEPLAIN" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkRough" GPDGDLName="LxkRough" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Rough/cotton</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:Transparency" GPDGDLName="TRANSPARENCY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Transparency</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="psk:CardStock" GPDGDLName="CARDSTOCK" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Card Stock</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom1" GPDGDLName="LxkCustom1" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 1</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom2" GPDGDLName="LxkCustom2" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 2</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom3" GPDGDLName="LxkCustom3" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 3</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom4" GPDGDLName="LxkCustom4" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 4</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom5" GPDGDLName="LxkCustom5" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 5</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkCustom6" GPDGDLName="LxkCustom6" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Type 6</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="psk:PageBorderless" GPDGDLName="JobUsePrinterMargins">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Use full printable area</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:Borderless" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:None" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobFitToPaperSize" GPDGDLName="FitToPageSize" ParentFeatureValueIn="PageScaling.FITTOPAPER" ParentFeatureValueNotIn="FitToPageSize.SelectedSize">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Fit To Paper Size</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:NorthAmericaLetter" GPDGDLName="LETTER">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Letter (8 1/2 x 11 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:NorthAmericaLegal" GPDGDLName="LEGAL">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Legal (8 1/2 x 14 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:NorthAmericaExecutive" GPDGDLName="EXECUTIVE">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Executive (7 1/4 x 10 1/2 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:NorthAmericaStatement" GPDGDLName="STATEMENT">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Statement (5 1/2 x 8 1/2 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:OtherMetricFolio" GPDGDLName="FOLIO">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Folio (8 1/2 x 13 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkMexicanOficio" GPDGDLName="LxkMexicanOficio">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Oficio (México) (216 x 340 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:NorthAmerica11x17" GPDGDLName="TABLOID">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tabloid (11 x 17 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:ISOA3" GPDGDLName="A3">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">A3 (297 x 420 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:ISOA4" GPDGDLName="A4">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">A4 (210 x 297 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:JISB4" GPDGDLName="B4">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">B4 (257 x 364 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:JISB5" GPDGDLName="B5">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">B5 (182 x 257 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:ISOA5" GPDGDLName="A5">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">A5 (148 x 210 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:ISOA6" GPDGDLName="A6">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">A6 (105 x 148 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:NorthAmericaMonarchEnvelope" GPDGDLName="ENV_MONARCH">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope 7 3/4 (3 7/8x7 1/2 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:NorthAmericaNumber9Envelope" GPDGDLName="ENV_9">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope 9 (3 7/8 x 8 7/8 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:NorthAmericaNumber10Envelope" GPDGDLName="ENV_10">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope 10 (4 1/8 x 9 1/2 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:ISODLEnvelope" GPDGDLName="ENV_DL">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope DL (110 x 220 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:ISOC5Envelope" GPDGDLName="ENV_C5">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope C5 (162 x 229 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:ISOC6Envelope" GPDGDLName="ENV_C6">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope C6 (114 x 162 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:NorthAmericaPersonalEnvelope" GPDGDLName="ENV_PERSONAL">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">North America Personal Envelope</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:ISOB5Envelope" GPDGDLName="ENV_B5">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Envelope B5 (176 x 250 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:JapanDoubleHagakiPostcard" GPDGDLName="DBL_JAPANESE_POSTCARD">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Japan Double Hagaki Postcard</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:IndexCard" GPDGDLName="IndexCard">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Index Card (3 x 5 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:JapanChou3Envelope" GPDGDLName="JENV_CHOU3">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Japan Chou3 Envelope</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:JapanChou4Envelope" GPDGDLName="JENV_CHOU4">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Japan Chou4 Envelope</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:JapanKaku3Envelope" GPDGDLName="JENV_KAKU3">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Japan Kaku3 Envelope</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:NorthAmerica11x17" GPDGDLName="11X17">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tabloid (11 x 17 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkSRA3" GPDGDLName="LxkSRA3">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">SRA3 (320 x 450 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">319969</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">450144</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Universal" GPDGDLName="UNIVERSAL">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Universal</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">359833</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:Banner210x914mm" GPDGDLName="Banner1">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Banner 210 x 914 mm</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:Banner210x1219mm" GPDGDLName="Banner2">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Banner 210 x 1219 mm</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:Banner297x914mm" GPDGDLName="Banner3">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Banner 297 x 914 mm</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:Banner297x1219mm" GPDGDLName="Banner4">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Banner 297 x 1219 mm</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk35x5in">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Photo (3.5 x 5 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk4x6in">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Postcard (4 x 6 in)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk5x7in">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">5 x 7 in</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk10x15cm">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">10 x 15 cm</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk4x8in">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">4 x 8 in</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk10x20cm">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">10 x 20 cm</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk13x18cm">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">13 x 18 cm</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkA2Baronial">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">A2 Baronial (111 x 146 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkChokei40">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Chokei 4( 90 x 205 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkHagaki">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Hagaki (100 x 148 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkKaku4Env">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Kakugata 4 (197 x 267 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkKaku5Env">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Kakugata 5 (190 x 240 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkKaku6Env">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Kakugata 6 (162 x 229 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkL">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">L (89 x 127 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk2L">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">2L (127 x 178 mm)</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkLetterBanner">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Lxk Letter Banner</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkLetterBorderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Letter Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkLegalBorderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Legal Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkB5Borderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">B5 Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkA4Borderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">A4 Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkA5Borderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">A5 Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkA6Borderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">A6 Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkLBorderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">L (89 x 127 mm) Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk2LBorderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">2L (127 x 178 mm) Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk35x5inBorderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">3.5 x 5 in Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk4x6inBorderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">4 x 6 in Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk10x15cmBorderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">10 x 15 cm Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk4x8inBorderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">4 x 8 in Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk10x20cmBorderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">10 x 20 cm Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk5x7inBorderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">5 x 7 in Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:Lxk13x18cmBorderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">13 x 18 cm Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkHagakiBorderless">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Hagaki Borderless</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkOtherEnvelope">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Other Envelope</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth" GPDGDLName="FitToPaperMediaSizeWidth">
+				<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight" GPDGDLName="FitToPaperMediaSizeHeight">
+				<psf:Value xsi:type="xsd:integer">279400</psf:Value>
+			</psf:ScoredProperty>
+		</psf:Option>
+		<psf:Option name="psk:CustomMediaSize" GPDGDLName="CUSTOM">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Custom Size</psf:Value>
+			</psf:Property>
+			<psf:ScoredProperty name="psk:MediaSizeWidth">
+				<psf:ParameterRef name="ns0000:JobFitToPaperSizeWidth" />
+			</psf:ScoredProperty>
+			<psf:ScoredProperty name="psk:MediaSizeHeight">
+				<psf:ParameterRef name="ns0000:JobFitToPaperSizeHeight" />
+			</psf:ScoredProperty>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobResizing" ParentFeatureValueNotIn="PageScaling.ACTUALSIZE">
+		<psf:Feature name="ns0000:JobScaling" GPDGDLName="PageScaling" ParentFeatureValueIn="PageScaling.CUSTOM">
+			<psf:Property name="psf:SelectionType">
+				<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+			</psf:Property>
+			<psf:Option name="ns0000:SquareScale" GPDGDLName="CUSTOM">
+				
+			</psf:Option>
+		</psf:Feature>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobMetafileSpooling">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Metafile spooling</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:AUTO" constrained="psk:None">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Automatic</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobPSInApplication">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Generate PostScript in driver</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:Off" constrained="psk:None" GPDGDLName="OFF">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Off</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:On" constrained="psk:None" GPDGDLName="ON">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">On</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobSeparatorPages" GPDGDLName="JobSeparatorPages">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">JobSeparatorPages</psf:Value>
+		</psf:Property>
+		<psf:Option name="ns0000:USEPRINTER" GPDGDLName="USEPRINTER">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">USEPRINTER</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:NONE" GPDGDLName="NONE">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">NONE</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:BETWEENJOBS" GPDGDLName="BETWEENJOBS">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">BETWEENJOBS</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:BTCOPIES" GPDGDLName="BTCOPIES">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">BTCOPIES</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:BETWEENPAGES" GPDGDLName="BETWEENPAGES">
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">BETWEENPAGES</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<psf:Feature name="ns0000:JobSeparatorSource" GPDGDLName="JobSeparatorSource">
+		<psf:Property name="psf:SelectionType">
+			<psf:Value xsi:type="xsd:QName">psk:PickOne</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">JobSeparatorSource</psf:Value>
+		</psf:Property>
+		<psf:Option name="psk:AutoSelect" GPDGDLName="FORMSOURCE" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Automatically Select</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:AutoSelect" GPDGDLName="USEPRINTER" SCOPE="PT_PS_ONLY" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Use printer settings</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Manual" GPDGDLName="MANUAL" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Manual Paper</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="psk:Multipurpose" GPDGDLName="LxkMultipurpose" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Multipurpose Feeder</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray1" GPDGDLName="LxkTray1" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 1</psf:Value>
+			</psf:Property>
+		</psf:Option>		
+		<psf:Option name="ns0000:LxkTray2" GPDGDLName="LxkTray2" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 2</psf:Value>
+			</psf:Property>
+		</psf:Option>	
+		<psf:Option name="ns0000:LxkTray3" GPDGDLName="LxkTray3" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 3</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray4" GPDGDLName="LxkTray4" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 4</psf:Value>
+			</psf:Property>
+		</psf:Option>
+		<psf:Option name="ns0000:LxkTray5" GPDGDLName="LxkTray5" >
+			<psf:Property name="psk:DisplayName">
+				<psf:Value xsi:type="xsd:string">Tray 5</psf:Value>
+			</psf:Property>
+		</psf:Option>
+	</psf:Feature>
+	<!--psf:ParameterDef name="ns0000:JobScalePercent" SCOPE="DONOTDELETE" GPDGDLName="UIEVENT_PageScaling" ParentFeatureValueIn="PageScaling.CUSTOM">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">100</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">400</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">10</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">Percent</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef-->
+	<psf:ParameterDef name="ns0000:JobFitToPaperSizeWidth" GPDGDLName="UIEVENT_FitToPaperCustomMediaSizeWidth" ParentFeatureValueIn="PageScaling.FITTOPAPER">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Fit to page paper size width</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">76200</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">215900</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">76200</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">microns</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+	<psf:ParameterDef name="ns0000:JobFitToPaperSizeHeight" GPDGDLName="UIEVENT_FitToPaperCustomMediaSizeHeight" ParentFeatureValueIn="PageScaling.FITTOPAPER">
+		<psf:Property name="psf:DataType">
+			<psf:Value xsi:type="xsd:QName">xsd:integer</psf:Value>
+		</psf:Property>
+		<psf:Property name="psk:DisplayName">
+			<psf:Value xsi:type="xsd:string">Fit to page paper size height</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:DefaultValue">
+			<psf:Value xsi:type="xsd:integer">76200</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MaxValue">
+			<psf:Value xsi:type="xsd:integer">359918</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:MinValue">
+			<psf:Value xsi:type="xsd:integer">76200</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Multiple">
+			<psf:Value xsi:type="xsd:integer">1</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:Mandatory">
+			<psf:Value xsi:type="xsd:QName">psk:Conditional</psf:Value>
+		</psf:Property>
+		<psf:Property name="psf:UnitType">
+			<psf:Value xsi:type="xsd:string">microns</psf:Value>
+		</psf:Property>
+	</psf:ParameterDef>
+</psf:PrintCapabilities>

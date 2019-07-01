@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+
+Copyright (c) 2007 Lexmark International
+
+All rights reserved
+
+-->
+
+<DriverGUI>
+   <FeatureUtilDll DLL="LMUD1PUA.dll"/>
+   <!-- PrintPreferences refers to Document Properties w/in the driver-->
+   <PrintPreferences>
+      <BaseDialog DLL="LMUD1PUE.dll" templateID="101"/>
+      <PropPage num="1">
+         <Title DLL="LMUD1PUE.dll" resourceID="2054" />
+         <Help HelpID="12345"/>
+         <Layout rows="18" columns="24" />
+         <SubDialog row="1" column="1">
+            <Dimensions height="6" width="9"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="CopiesDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="102" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+         <SubDialog row="1" column="10">
+             <Dimensions height="3" width="9"/>
+             <MsgProc DLL="LMUD1PUC.dll" name="NaturalReadingOrderDlgProc" />
+             <Template DLL="LMUD1PUE.dll" 
+                     templateID="187" />
+             <Language DLL="LMUD1PUE.dll" />
+             <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+         <SubDialog row="4" column="10">
+            <Dimensions height="16" width="9"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PageLayoutDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="106" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+         <SubDialog row="1" column="19">
+            <Dimensions height="12" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PreviewDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="108" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+         <SubDialog row="7" column="1">
+            <Dimensions height="4" width="9"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="OrientationDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="104" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+         <SubDialog row="11" column="1">
+            <Dimensions height="8" width="9"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="TwoSidedDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="103" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+         <SubDialog row="13" column="19">
+            <Dimensions height="6" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PrintSettingsDlgProc" />
+            <Template DLL="LMUD1PUE.dll" 
+                    templateID="109" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+      </PropPage>
+      <PropPage num="2">
+         <Title DLL="LMUD1PUH.dll" resourceID="2032" />
+         <Help HelpID="87654"/>
+         <Layout rows="18" columns="24" />
+         <!--SubDialog row="1" column="1">
+            <Dimensions height="9" width="9"/>
+            <MsgProc DLL="LMUD1PUF.dll"
+                   name="CPDPrintQualityDlgProc" />
+            <Template DLL="LMUD1PUH.dll"
+                    templateID="189" />
+            <Language DLL="LMUD1PUH.dll" />
+            <Bitmap DLL="LMUD1PUG.dll" />
+         </SubDialog-->
+         <SubDialog row="1" column="1">
+            <Dimensions height="18" width="9"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PaperDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="107" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+          <SubDialog row="1" column="10">
+            <Dimensions height="18" width="9"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="FinishingDlgProc" />
+            <Template DLL="LMUD1PUE.dll" 
+                    templateID="174" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+          </SubDialog>
+         <SubDialog row="1" column="19">
+            <Dimensions height="12" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PreviewDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="108" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+         <SubDialog row="13" column="19">
+            <Dimensions height="6" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PrintSettingsDlgProc" />
+            <Template DLL="LMUD1PUE.dll" 
+                    templateID="109" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+      </PropPage>
+      <PropPage num="3">
+            <Title DLL="LMUD1PUH.dll" resourceID="2011" />
+            <Help HelpID="2507"/>
+            <Layout rows="18" columns="24" />
+            <SubDialog row="1" column="1">
+               <Dimensions height="7" width="9"/>
+               <MsgProc DLL="LMUD1PUC.dll"
+                      name="CPDPrintQualityDlgProc" />
+               <Template DLL="LMUD1PUE.dll"
+                       templateID="159" />
+               <Language DLL="LMUD1PUE.dll" />
+               <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+            <SubDialog row="1" column="10">
+                <Dimensions height="5" width="9"/>
+                <MsgProc DLL="LMUD1PUC.dll"
+                       name="PrintQualityDlgProc" />
+                <Template DLL="LMUD1PUE.dll" 
+                        templateID="179" />
+                <Language DLL="LMUD1PUE.dll" />
+                <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+            <SubDialog row="1" column="10">
+               <Dimensions height="12" width="9"/>
+               <MsgProc DLL="LMUD1PUC.dll"
+                      name="ColorOutputDlgProc" />
+               <Template DLL="LMUD1PUE.dll"
+                       templateID="161" />
+               <Language DLL="LMUD1PUE.dll" />
+               <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+            <SubDialog row="1" column="1">
+                <Dimensions height="6" width="9"/>
+                <MsgProc DLL="LMUD1PUC.dll"
+                       name="TonerDarknessDlgProc" />
+                <Template DLL="LMUD1PUE.dll" 
+                        templateID="172" />
+                <Language DLL="LMUD1PUE.dll" />
+                <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+            <SubDialog row="1" column="19">
+              <Dimensions height="12" width="6"/>
+              <MsgProc DLL="LMUD1PUC.dll"
+                     name="PreviewDlgProc" />
+              <Template DLL="LMUD1PUE.dll" 
+                      templateID="108" />
+              <Language DLL="LMUD1PUE.dll" />
+              <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+            <SubDialog row="5" column="10">
+                <Dimensions height="3" width="9"/>
+                <MsgProc DLL="LMUD1PUC.dll"
+                       name="ColorSaverDlgProc" />
+                <Template DLL="LMUD1PUE.dll" 
+                        templateID="175" />
+                <Language DLL="LMUD1PUE.dll" />
+                <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+            <SubDialog row="8" column="1">
+               <Dimensions height="7" width="9"/>
+               <MsgProc DLL="LMUD1PUC.dll"
+                      name="ColorExtrasDlgProc" />
+               <Template DLL="LMUD1PUE.dll"
+                       templateID="160" />
+               <Language DLL="LMUD1PUE.dll" />
+               <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+	    <SubDialog row="12" column="1">
+                <Dimensions height="3" width="9"/>
+                <MsgProc DLL="LMUD1PUC.dll"
+                       name="PixelBoostDlgProc" />
+                <Template DLL="LMUD1PUE.dll" 
+                        templateID="177" />
+                <Language DLL="LMUD1PUE.dll" />
+                <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+             <SubDialog row="12" column="1">
+              <Dimensions height="6" width="9"/>
+                <MsgProc DLL="LMUD1PUC.dll"
+                     name="ColorControlsDlgProc" />
+                <Template DLL="LMUD1PUE.dll" 
+                        templateID="181" />
+                <Language DLL="LMUD1PUE.dll" />
+                <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+            <SubDialog row="8" column="10">
+                <Dimensions height="9" width="9"/>
+                <MsgProc DLL="LMUD1PUC.dll"
+                       name="RGBCorrectionDlgProc" />
+                <Template DLL="LMUD1PUE.dll" 
+                        templateID="180" />
+                <Language DLL="LMUD1PUE.dll" />
+                <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+            <SubDialog row="8" column="10">
+                <Dimensions height="6" width="9"/>
+                <MsgProc DLL="LMUD1PUC.dll"
+                       name="GreyCorrectionDlgProc" />
+                <Template DLL="LMUD1PUE.dll" 
+                        templateID="176" />
+                <Language DLL="LMUD1PUE.dll" />
+                <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+            <!--<SubDialog row="13" column="10">
+                <Dimensions height="3" width="9"/>
+                <MsgProc DLL="LMUD1PUF.dll"
+                       name="pssdEnhanceSmallFontsDlgProc" />
+                <Template DLL="LMUD1PUH.dll" 
+                        templateID="108" />
+                <Language DLL="LMUD1PUH.dll" />
+                <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>   -->
+          <!--SubDialog row="13" column="19">
+            <Dimensions height="6" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PrintProfileDlgProc" />
+            <Template DLL="LMUD1PUE.dll" 
+                    templateID="109" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+          </SubDialog-->
+         <SubDialog row="13" column="19">
+            <Dimensions height="6" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PrintSettingsDlgProc" />
+            <Template DLL="LMUD1PUE.dll" 
+                    templateID="109" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+            <SubDialog row="8" column="1">
+              <Dimensions height="3" width="9"/>
+                <MsgProc DLL="LMUD1PUC.dll"
+                     name="BlackAndWhiteDlgProc" />
+                <Template DLL="LMUD1PUE.dll" 
+                        templateID="173" />
+                <Language DLL="LMUD1PUE.dll" />
+                <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+	</PropPage>
+	<!--<PropPage num="3">
+	    <Title DLL="LMUD1PUE.dll" resourceID="2003" />
+	    <Layout rows="18" columns="24" />
+	    <SubDialog row="1" column="1">
+	      <Dimensions height="18" width="9"/>
+	      <MsgProc DLL="LMUD1PUC.dll"
+		     name="TestDlgProc" />
+	      <Template DLL="LMUD1PUE.dll" 
+		      templateID="111" />
+	      <Language DLL="LMUD1PUE.dll" />
+	      <Bitmap DLL="LMUD1PUD.dll" />
+	    </SubDialog>
+	  <SubDialog row="1" column="10">
+	    <Dimensions height="18" width="9"/>
+	    <MsgProc DLL="LMUD1PUC.dll"
+		   name="FilterTestDlgProc" />
+	    <Template DLL="LMUD1PUE.dll" 
+		    templateID="112" />
+	    <Language DLL="LMUD1PUE.dll" />
+	    <Bitmap DLL="LMUD1PUD.dll" />
+	  </SubDialog>
+	</PropPage>-->
+        <PropPage num="4">
+	<Title DLL="LMUD1PUE.dll" resourceID="2422" /> 
+   <Help HelpID="2523"/>
+	<Layout rows="18" columns="24" /> 
+	<PrecreateProc DLL="LMUD1PUC.DLL" name="FaxPrecreateProc" /> 
+	  <SubDialog row="1" column="1">
+		  <Dimensions height="3" width="18" /> 
+		  <MsgProc DLL="LMUD1PUC.dll" name="FaxDlgProc" /> 
+		  <Template DLL="LMUD1PUE.dll" templateID="126" /> 
+		  <Language DLL="LMUD1PUE.dll" /> 
+		  <Bitmap DLL="LMUD1PUD.dll" /> 
+	  </SubDialog>
+	  <SubDialog row="1" column="19">
+		  <Dimensions height="12" width="6" /> 
+		  <MsgProc DLL="LMUD1PUC.dll" name="PreviewDlgProc" /> 
+		  <Template DLL="LMUD1PUE.dll" templateID="108" /> 
+		  <Language DLL="LMUD1PUE.dll" /> 
+		  <Bitmap DLL="LMUD1PUD.dll" /> 
+	  </SubDialog>
+	  <SubDialog row="4" column="1">
+		  <Dimensions height="15" width="9" /> 
+		  <MsgProc DLL="LMUD1PUC.dll" name="FaxSendToDlgProc" /> 
+		  <Template DLL="LMUD1PUE.dll" templateID="127" /> 
+		  <Language DLL="LMUD1PUE.dll" /> 
+		  <Bitmap DLL="LMUD1PUD.dll" /> 
+	  </SubDialog>
+	  <SubDialog row="4" column="10">
+		  <Dimensions height="15" width="9" /> 
+		  <MsgProc DLL="LMUD1PUC.dll" name="FaxCoverPageDlgProc" /> 
+		  <Template DLL="LMUD1PUE.dll" templateID="128" /> 
+		  <Language DLL="LMUD1PUE.dll" /> 
+		  <Bitmap DLL="LMUD1PUD.dll" /> 
+	  </SubDialog>
+         <SubDialog row="13" column="19">
+            <Dimensions height="6" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PrintSettingsDlgProc" />
+            <Template DLL="LMUD1PUE.dll" 
+                    templateID="109" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+	</PropPage>
+    <PropPage num="5">
+      <Title DLL="LMUD1PUE.dll" resourceID="2421" /> 
+      <Help HelpID="2520"/>
+      <Layout rows="18" columns="24" />
+      <PrecreateProc DLL="LMUD1PUC.DLL" name="WatermarkPrecreateProc" />
+        <SubDialog row="1" column="1">
+            <Dimensions height="15" width="9"/>
+            <MsgProc DLL="LMUD1PUC.dll" name="WmkOptionsCellProc" />
+            <Template DLL="LMUD1PUE.dll" 
+                    templateID="116" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+        </SubDialog>
+        <SubDialog row="1" column="10">
+            <Dimensions height="18" width="9"/>
+            <MsgProc DLL="LMUD1PUC.dll" name="WmkPreviewCellProc" />
+            <Template DLL="LMUD1PUE.dll" 
+                    templateID="117" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+        </SubDialog>
+        <SubDialog row="1" column="19">
+          <Dimensions height="12" width="6"/>
+          <MsgProc DLL="LMUD1PUC.dll" name="PreviewDlgProc" />
+          <Template DLL="LMUD1PUE.dll" 
+                templateID="108" />
+          <Language DLL="LMUD1PUE.dll" />
+          <Bitmap DLL="LMUD1PUD.dll" />
+        </SubDialog>
+        <SubDialog row="13" column="19">
+           <Dimensions height="6" width="6"/>
+           <MsgProc DLL="LMUD1PUC.dll"  name="PrintSettingsDlgProc" />
+           <Template DLL="LMUD1PUE.dll" 
+                     templateID="109" />
+           <Language DLL="LMUD1PUE.dll" />
+           <Bitmap DLL="LMUD1PUD.dll" />
+        </SubDialog>
+    </PropPage>
+    <PropPage num="6">
+       <Title DLL="LMUD1PUE.dll" resourceID="2463" />
+       <Help HelpID="2521"/>
+       <Layout rows="18" columns="24" />
+	<PrecreateProc DLL="LMUD1PUC.DLL" name="OverlayPrecreateProc" /> 
+       <SubDialog row="1" column="1">
+           <Dimensions height="15" width="9"/>
+           <MsgProc DLL="LMUD1PUC.dll"  name="OverlayOptionsDlgProc" />
+           <Template DLL="LMUD1PUE.dll" templateID="139"/>
+           <Language DLL="LMUD1PUE.dll" />
+           <Bitmap DLL="LMUD1PUD.dll" />
+       </SubDialog>
+       <SubDialog row="1" column="19">
+           <Dimensions height="12" width="6"/>
+           <MsgProc DLL="LMUD1PUC.dll"
+                  name="PreviewDlgProc" />
+           <Template DLL="LMUD1PUE.dll"
+                   templateID="108" />
+           <Language DLL="LMUD1PUE.dll" />
+           <Bitmap DLL="LMUD1PUD.dll" />
+       </SubDialog>
+       <SubDialog row="13" column="19">
+          <Dimensions height="6" width="6"/>
+          <MsgProc DLL="LMUD1PUC.dll"  name="PrintSettingsDlgProc" />
+          <Template DLL="LMUD1PUE.dll" templateID="109" />
+          <Language DLL="LMUD1PUE.dll" />
+          <Bitmap DLL="LMUD1PUD.dll" />
+       </SubDialog>
+       <SubDialog row="16" column="1">
+           <Dimensions height="3" width="9"/>
+           <MsgProc DLL="LMUD1PUC.dll" name="OverlayPlacementDlgProc" />
+           <Template DLL="LMUD1PUE.dll" templateID="140"/>
+           <Language DLL="LMUD1PUE.dll" />
+           <Bitmap DLL="LMUD1PUD.dll" />
+       </SubDialog>
+       </PropPage>     
+    <PropPage num="7">
+	<Title DLL="LMUD1PUH.dll" resourceID="2003" />
+   <Help HelpID="2522"/>
+	<Layout rows="18" columns="24" />
+	<PrecreateProc DLL="LMUD1PUF.DLL" name="PrintAndHoldPrecreateProc" />
+	<SubDialog row="1" column="1">
+		<Dimensions height="18" width="18"/>
+		<MsgProc DLL="LMUD1PUF.dll"
+			   name="PrintAndHoldDlgProc" />
+		<Template DLL="LMUD1PUH.dll"
+				templateID="118"/>
+		<Language DLL="LMUD1PUH.dll" />
+		<Bitmap DLL="LMUD1PUG.dll" />
+	</SubDialog>
+	<SubDialog row="1" column="19">
+		<Dimensions height="12" width="6"/>
+		<MsgProc DLL="LMUD1PUC.dll"
+			   name="PreviewDlgProc" />
+		<Template DLL="LMUD1PUE.dll"
+				templateID="108" />
+		<Language DLL="LMUD1PUE.dll" />
+		<Bitmap DLL="LMUD1PUD.dll" />
+	</SubDialog>
+         <SubDialog row="13" column="19">
+            <Dimensions height="6" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PrintSettingsDlgProc" />
+            <Template DLL="LMUD1PUE.dll" 
+                    templateID="109" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+	</PropPage>
+        <PropPage num="8">
+		<Title DLL="LMUD1PUH.dll" resourceID="2107" />
+      <Help HelpID="2524"/>
+		<Layout rows="18" columns="24" />
+      <PrecreateProc DLL="LMUD1PUC.DLL" name="OtherOptionsPrecreateProc" />
+        <SubDialog row="1" column="1">
+        	<Dimensions height="4" width="9" />
+        	<MsgProc DLL="LMUD1PUC.dll" name="TrueTypeFontsDlgProc" />
+        	<Template DLL="LMUD1PUE.dll" templateID="150" />
+        	<Language DLL="LMUD1PUE.dll" />
+        	<Bitmap DLL="LMUD1PUD.dll" />
+        </SubDialog>
+        <SubDialog row="1" column="10">
+          <Dimensions height="6" width="9" /> 
+          <MsgProc DLL="LMUD1PUF.dll" name="AccountTrackingDlgProc" /> 
+          <Template DLL="LMUD1PUH.dll" templateID="125" /> 
+          <Language DLL="LMUD1PUH.dll" /> 
+          <Bitmap DLL="LMUD1PUG.dll" /> 
+        </SubDialog>
+        <SubDialog row="1" column="10">
+          <Dimensions height="3" width="9" /> 
+          <MsgProc DLL="LMUD1PUC.dll" name="AccountTrackingOptionBPrefDlgProc" /> 
+          <Template DLL="LMUD1PUE.dll" templateID="157" /> 
+          <Language DLL="LMUD1PUE.dll" /> 
+          <Bitmap DLL="LMUD1PUD.dll" /> 
+        </SubDialog>
+        <SubDialog row="1" column="19">
+            <Dimensions height="12" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll" name="PreviewDlgProc" /> 
+            <Template DLL="LMUD1PUE.dll" templateID="108" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+        </SubDialog>
+		 <SubDialog row="5" column="1">
+            <Dimensions height="6" width="9" />
+            <MsgProc DLL="LMUD1PUC.dll" name="ImageCompressionDlgProc" />
+            <Template DLL="LMUD1PUE.dll" templateID="190" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+		 <SubDialog row="5" column="1">
+            <Dimensions height="7" width="9" />
+            <MsgProc DLL="LMUD1PUC.dll" name="ImageCompressionMultiDlgProc" />
+            <Template DLL="LMUD1PUE.dll" templateID="192" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+		 <SubDialog row="5" column="1">
+            <Dimensions height="7" width="9" />
+            <MsgProc DLL="LMUD1PUC.dll" name="CompressionMultiDlgProc" />
+            <Template DLL="LMUD1PUE.dll" templateID="195" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+        <SubDialog row="11" column="1">
+            <Dimensions height="11" width="9"/>
+            <MsgProc DLL="LMUD1PUF.dll"  name="PSOptionsDlgProc" />
+            <Template DLL="LMUD1PUH.dll" templateID="120"/>
+            <Language DLL="LMUD1PUH.dll" />
+            <Bitmap DLL="LMUD1PUG.dll" />
+        </SubDialog>
+        <SubDialog row="6" column="1">
+    		<Dimensions height="3" width="9" />
+    		<MsgProc DLL="LMUD1PUF.dll" name="PclDlgProc" />
+    		<Template DLL="LMUD1PUH.dll" templateID="123" />
+    		  <Language DLL="LMUD1PUH.dll" /> 
+    		<Bitmap DLL="LMUD1PUG.dll" />
+    	</SubDialog>
+        <SubDialog row="7" column="10">
+    		<Dimensions height="3" width="9" />
+    		<MsgProc DLL="LMUD1PUF.dll" name="MetafileSpoolingDlgProc" />
+    		<Template DLL="LMUD1PUH.dll" templateID="128" />
+    		  <Language DLL="LMUD1PUH.dll" /> 
+    		<Bitmap DLL="LMUD1PUG.dll" />
+    	</SubDialog>
+        <SubDialog row="10" column="10">
+    		<Dimensions height="3" width="9" />
+    		<MsgProc DLL="LMUD1PUC.dll" name="ContinuousImageDlgProc" />
+    		<Template DLL="LMUD1PUE.dll" templateID="186" />
+    		  <Language DLL="LMUD1PUE.dll" /> 
+    		<Bitmap DLL="LMUD1PUD.dll" />
+    	</SubDialog>
+		<SubDialog row="13" column="10">
+    		<Dimensions height="3" width="9" />
+    		<MsgProc DLL="LMUD1PUC.dll" name="ExpressModeDlgProc" />
+    		<Template DLL="LMUD1PUE.dll" templateID="191" />
+    		  <Language DLL="_Prefix^PUE.dll" /> 
+    		<Bitmap DLL="LMUD1PUD.dll" />
+    	</SubDialog>
+        <SubDialog row="13" column="19">
+            <Dimensions height="6" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PrintSettingsDlgProc" />
+            <Template DLL="LMUD1PUE.dll" 
+                    templateID="109" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+	</PropPage>
+    <PropPage num="9">
+        <Title DLL="LMUD1PUE.dll" resourceID="2506" />
+        <Help HelpID="2600"/>
+        <Layout rows="18" columns="24" />
+        <PrecreateProc DLL="LMUD1PUC.DLL" name="RFIDPrecreateProc" />
+        <SubDialog row="1" column="1">
+            <Dimensions height="12" width="12" />
+            <MsgProc DLL="LMUD1PUC.dll" name="RFIDDlgProc" />
+            <Template DLL="LMUD1PUE.dll" templateID="151" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+        </SubDialog>
+        <SubDialog row="1" column="19">
+            <Dimensions height="12" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PreviewDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="108" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+        </SubDialog>
+        <SubDialog row="13" column="19">
+            <Dimensions height="6" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PrintSettingsDlgProc" />
+            <Template DLL="LMUD1PUE.dll" 
+                    templateID="109" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+    </PropPage>
+   </PrintPreferences>
+   <!-- PrintProperties refers to Device Properties w/in the driver-->
+   <PrintProperties>
+      <BaseDialog DLL="LMUD1PUE.dll" templateID="101"/>
+      <PrecreateProc DLL="LMUD1PUC.DLL" name="PropertiesPrecreateProc" />
+      <PropPage num="1">
+         <Title DLL="LMUD1PUE.dll" resourceID="2599" />
+         <Help HelpID="2525"/>
+         <Layout rows="18" columns="24" />
+         <PrecreateProc DLL="LMUD1PUC.DLL" name="ConfigurationsPrecreateProc" />
+            <SubDialog row="1" column="1">
+                 <Dimensions height="9" width="11"/>
+                 <MsgProc DLL="LMUD1PUC.dll"
+                        name="DynamicPrinterConfigurationsDlgProc" />
+                 <Template DLL="LMUD1PUE.dll"
+                         templateID="162" />
+                 <Language DLL="LMUD1PUE.dll" />
+                 <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+         <SubDialog row="1" column="13">
+            <Dimensions height="3" width="9"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="LanguageDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="122" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+            <SubDialog row="6" column="13">
+               <Dimensions height="3" width="9"/>
+               <MsgProc DLL="LMUD1PUF.dll"
+                      name="FormToTrayAssignmentDlgProc" />
+               <Template DLL="LMUD1PUH.dll"
+                       templateID="121" />
+               <Language DLL="LMUD1PUH.dll" />
+               <Bitmap DLL="LMUD1PUG.dll" />
+            </SubDialog>
+        <SubDialog row="9" column="13">
+          <Dimensions height="3" width="9"/>
+          <MsgProc DLL="LMUD1PUC.dll"
+                 name="PageProtectSystemFormA4DlgProc" />
+          <Template DLL="LMUD1PUE.dll"
+                  templateID="152" />
+          <Language DLL="LMUD1PUE.dll" />
+          <Bitmap DLL="LMUD1PUD.dll" />
+        </SubDialog>
+            <SubDialog row="10" column="1">
+            <Dimensions height="10" width="11"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="ConfigurationOptionsDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="178" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+            </SubDialog>
+	    <SubDialog row="13" column="13">
+                <Dimensions height="3" width="9"/>
+                <MsgProc DLL="LMUD1PUC.dll"
+                       name="CollationDlgProc" />
+                <Template DLL="LMUD1PUE.dll"
+                        templateID="171" />
+                <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+        </PropPage>
+	<PropPage num="2">
+         <Title DLL="LMUD1PUH.dll" resourceID="2108" />
+         <Help HelpID="2526"/>
+         <Layout rows="18" columns="24" />
+  	 <PrecreateProc DLL="LMUD1PUC.DLL" name="PSPropsPrecreateProc" />
+         <SubDialog row="1" column="1">
+            <Dimensions height="6" width="9"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PSOutputProtocolDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="123" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+		 <SubDialog row="7" column="1">
+            <Dimensions height="6" width="9"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PSAdvancedOptionsDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="124" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+		 <SubDialog row="13" column="1">
+            <Dimensions height="3" width="6"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="PSMemoryDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="125" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+	</PropPage>
+        <PropPage num="3">
+         <Title DLL="LMUD1PUE.dll" resourceID="2463" />
+         <Help HelpID="2527"/>
+         <Layout rows="18" columns="24" />
+	<PrecreateProc DLL="LMUD1PUC.DLL" name="OverlayPrecreateProc" /> 
+         <SubDialog row="1" column="1">
+            <Dimensions height="9" width="12"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="OverlayAddDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="142" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+         </SubDialog>
+    	<SubDialog row="10" column="1">
+    		<Dimensions height="6" width="18" />
+    		<MsgProc DLL="LMUD1PUC.dll"
+    			name="OverlayRemoveDlgProc" />
+    		<Template DLL="LMUD1PUE.dll"
+    			templateID="143" />
+    		  <Language DLL="LMUD1PUE.dll" /> 
+    		<Bitmap DLL="LMUD1PUD.dll" />
+    	</SubDialog>
+    	<SubDialog row="16" column="1">
+    		<Dimensions height="3" width="12" />
+    		<MsgProc DLL="LMUD1PUC.dll"
+    			name="OverlayDownloadDlgProc" />
+    		<Template DLL="LMUD1PUE.dll" templateID="144" />
+    		  <Language DLL="LMUD1PUE.dll" /> 
+    		<Bitmap DLL="LMUD1PUD.dll" />
+    	</SubDialog>
+   </PropPage>
+   <PropPage num="4">
+	<Title DLL="LMUD1PUE.dll" resourceID="2470" />
+   <Help HelpID="2528"/> 
+	<Layout rows="18" columns="24" /> 
+	<PrecreateProc DLL="LMUD1PUC.DLL" name="PCLFontsPrecreateProc" /> 
+	    <SubDialog row="1" column="1">
+		<Dimensions height="12" width="12" /> 
+		<MsgProc DLL="LMUD1PUC.dll" 
+			name="PCLFontsDlgProc" /> 
+		<Template DLL="LMUD1PUE.dll" templateID="146" /> 
+		<Language DLL="LMUD1PUE.dll" /> 
+		<Bitmap DLL="LMUD1PUD.dll" /> 
+	    </SubDialog>
+	    <SubDialog row="13" column="1">
+		<Dimensions height="3" width="12" /> 
+		<MsgProc DLL="LMUD1PUC.dll" 
+			name="DownloadPCLFontsDlgProc" /> 
+		<Template DLL="LMUD1PUE.dll" templateID="147" /> 
+		<Language DLL="LMUD1PUE.dll" /> 
+		<Bitmap DLL="LMUD1PUD.dll" /> 
+	    </SubDialog>
+	</PropPage>		
+	<PropPage num="5">
+	<Title DLL="LMUD1PUE.dll" resourceID="2422" /> 
+   <Help HelpID="2506"/>
+	<Layout rows="18" columns="24" /> 
+	<PrecreateProc DLL="LMUD1PUC.DLL" name="FaxPrecreateProc" /> 
+	    <SubDialog row="1" column="1">
+		<Dimensions height="18" width="24" /> 
+		<MsgProc DLL="LMUD1PUC.dll" 
+			name="FaxSettingsDlgProc" /> 
+		<Template DLL="LMUD1PUE.dll" templateID="130" /> 
+		<Language DLL="LMUD1PUE.dll" /> 
+		<Bitmap DLL="LMUD1PUD.dll" /> 
+	    </SubDialog> 
+     </PropPage>		
+        <PropPage num="6">
+         <Title DLL="LMUD1PUE.dll" resourceID="2539" />
+         <Help HelpID="2610"/>
+         <Layout rows="18" columns="24" />
+         <PrecreateProc DLL="LMUD1PUC.DLL" name="AccountTrackingOptionBPrecreateProc" /> 
+          <SubDialog row="1" column="1">
+            <Dimensions height="18" width="15" />
+            <MsgProc DLL="LMUD1PUC.dll" name="AccountTrackingOptionBPropDlgProc" />
+            <Template DLL="LMUD1PUE.dll" templateID="154" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+      </SubDialog>
+      </PropPage>
+        <PropPage num="7">
+         <Title DLL="LMUD1PUE.dll" resourceID="2019" />
+         <Help HelpID="12784"/>
+         <Layout rows="18" columns="24" />
+         <PrecreateProc DLL="LMUD1PUC.DLL" name="AboutTabPrecreateProc" />
+          <SubDialog row="1" column="2">
+            <Dimensions height="6" width="22"/>
+            <MsgProc DLL="LMUD1PUC.dll"
+                   name="VersionInfoDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+                    templateID="138" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+          </SubDialog>
+          <SubDialog row="7" column="4">
+            <Dimensions height="9" width="18" />
+            <MsgProc DLL="LMUD1PUC.dll"
+              name="WebLinksDlgProc" />
+            <Template DLL="LMUD1PUE.dll"
+              templateID="136" />
+            <Language DLL="LMUD1PUE.dll" />
+            <Bitmap DLL="LMUD1PUD.dll" />
+          </SubDialog>
+      </PropPage>
+   </PrintProperties>
+    <PopupDlgs>
+      <PopupDlg num="100">
+      <Help HelpID="2538"/>
+      <Template DLL="LMUD1PUE.dll" templateID="153"/>
+      <Title DLL="LMUD1PUE.dll" resourceID="2516" />
+      <Layout rows="18" columns="24" />
+      <SubDialog row="1" column="1">
+        <Dimensions height="15" width="9" />
+        <MsgProc DLL="LMUD1PUC.dll" name="FaxSendToDlgProc" />
+        <Template DLL="LMUD1PUE.dll" templateID="127" />
+        <Language DLL="LMUD1PUE.dll" />
+        <Bitmap DLL="LMUD1PUD.dll" />
+      </SubDialog>
+      <SubDialog row="1" column="10">
+        <Dimensions height="15" width="9" />
+        <MsgProc DLL="LMUD1PUC.dll" name="FaxCoverPageDlgProc" />
+        <Template DLL="LMUD1PUE.dll" templateID="128" />
+        <Language DLL="LMUD1PUE.dll" />
+        <Bitmap DLL="LMUD1PUD.dll" />
+      </SubDialog>
+      </PopupDlg>
+      <PopupDlg num="101">
+      <Help HelpID="2605"/>
+      <Template DLL="LMUD1PUH.dll" templateID="127"/>
+      <Title DLL="LMUD1PUH.dll" resourceID="2116" />
+      <Layout rows="18" columns="24" />
+      <SubDialog row="1" column="1">
+        <Dimensions height="6" width="13" />
+        <MsgProc DLL="LMUD1PUF.dll" name="AccountTrackingPrintTimeDlgProc" />
+        <Template DLL="LMUD1PUH.dll" templateID="126" />
+        <Language DLL="LMUD1PUH.dll" />
+        <Bitmap DLL="LMUD1PUG.dll" />
+      </SubDialog> 
+      </PopupDlg>
+      <PopupDlg num="102">
+      <Help HelpID="2611"/>
+      <Template DLL="LMUD1PUE.dll" templateID="158"/>
+      <Title DLL="LMUD1PUE.dll" resourceID="2539" />
+      <Layout rows="18" columns="24" />
+      <SubDialog row="1" column="1">
+        <Dimensions height="12" width="13" />
+        <MsgProc DLL="LMUD1PUC.dll" name="AccountTrackingOptionBPrintTimeDlgProc" />
+        <Template DLL="LMUD1PUE.dll" templateID="156" />
+        <Language DLL="LMUD1PUE.dll" />
+        <Bitmap DLL="LMUD1PUD.dll" />
+      </SubDialog>
+      </PopupDlg>
+	  <PopupDlg num="103">
+      <Help HelpID="2617"/>
+      <Template DLL="LMUD1PUE.dll" templateID="194"/>
+      <Title DLL="LMUD1PUE.dll" resourceID="2636" />
+      <Layout rows="18" columns="24" />
+      <SubDialog row="1" column="1">
+        <Dimensions height="5" width="16" />
+        <MsgProc DLL="LMUD1PUC.dll" name="EnterPINPopUpDlgProc" />
+        <Template DLL="LMUD1PUE.dll" templateID="193" />
+        <Language DLL="LMUD1PUE.dll" />
+        <Bitmap DLL="LMUD1PUD.dll" />
+      </SubDialog>
+      </PopupDlg>	 	  
+   </PopupDlgs>
+   <!-- 
+    Logo Information Section
+   --> 
+   <LogoInfo>
+        <MsgProc DLL="LMUD1PUC.dll" name="LogoDlgProc" /> 
+        <Template DLL="LMUD1PUE.dll" templateID="113" /> 
+   </LogoInfo>
+</DriverGUI>
