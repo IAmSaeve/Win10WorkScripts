@@ -11,7 +11,7 @@ if ($canonDriver.Name -NE "Canon iR-ADV C5235/5240 UFR II") {
   if ($I.ToUpper() -EQ "Y") {
     Start-Process -Wait Powershell.exe -ArgumentList "-File `"$PSScriptRoot.\Canon UFR-II\InstallDriver.ps1`""
   } else {
-    Write-Host "Skipping"; Write-Host
+    Write-Host "Skipping`n";
   }
 }
 else {
@@ -24,7 +24,7 @@ if ($lexmarkDriver.Name -NE "Lexmark Universal v2 XL") {
   if ($I.ToUpper() -EQ "Y") {
     Start-Process -Wait Powershell.exe -ArgumentList "-File `"$PSScriptRoot.\Lexmark Universal\InstallDriver.ps1`""
   } else {
-    Write-Host "Skipping"; Write-Host
+    Write-Host "Skipping`n";
   }
 }
 else {
