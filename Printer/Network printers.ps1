@@ -8,7 +8,7 @@ $lexmarkDriver = Get-PrinterDriver | Select-Object Name | Where-Object { $_.Name
 if ($canonDriver.Name -NE "Canon iR-ADV C5235/5240 UFR II") {
   Write-Host "Canon driver not found"
   $I = Read-Host -Prompt "Do you want to install the Canon drivers? [y/n]"
-  if ($I.ToUpper() -EQ "Y") {
+  if ($I -EQ "y") {
     Start-Process -Wait Powershell.exe -ArgumentList "-File `"$PSScriptRoot.\Canon UFR-II\InstallDriver.ps1`""
   } else {
     Write-Host "Skipping`n";
@@ -21,7 +21,7 @@ else {
 if ($lexmarkDriver.Name -NE "Lexmark Universal v2 XL") {
   Write-Host "Lexmark driver not found"
   $I = Read-Host -Prompt "Do you want to install the Lexmark drivers? [y/n]"
-  if ($I.ToUpper() -EQ "Y") {
+  if ($I -EQ "y") {
     Start-Process -Wait Powershell.exe -ArgumentList "-File `"$PSScriptRoot.\Lexmark Universal\InstallDriver.ps1`""
   } else {
     Write-Host "Skipping`n";
