@@ -52,11 +52,15 @@ Function MainMenu {
             3 {
                 Clear-Host
                 $adapter = (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -Like "Ethernet*" -And $_.Status -EQ "Up" }).Name
-                if ((Get-NetAdapterBinding -ComponentID ms_tcpip6 -Name $adapter).Enabled) {
+                if ((Get-NetAdapterBinding -ComponentID ms_tcpip6 -Name $adapter).Enabled -And $adapter -is "System.String") {
                     Write-Host "IPv6 is enabled"
                     Start-Sleep -Seconds 2
                     Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
                     Disable-NetAdapterBinding -Name $($adapter) -ComponentID ms_tcpip6; Get-NetAdapterBinding -ComponentID ms_tcpip6; Start-Sleep -Seconds 3" -Verb RunAs
+                } elseif ($adapter -is "System.Array") {
+                    Write-Host "Too many adapters were found.`nPlease manually select the correct adapter"
+                    timeout.exe 5
+                    Start-Process ncpa.cpl
                 } else {
                     Read-Host -Prompt "IPv6 is disabled on this system.`nPress any key to continue..."
                 }
