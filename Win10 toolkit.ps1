@@ -27,6 +27,7 @@ $Apps = (
     "Microsoft.XboxApp"
 )
 
+$adapter = (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -Like "Ethernet*" -And $_.Status -EQ "Up" }).Name
 
 
 Function MainMenu {
@@ -43,15 +44,21 @@ Function MainMenu {
 
         switch ($Input) {
             1 {
-                MenuGreve
-                # Pause
+                # TODO: Extract to seperate script file
+                if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+                    Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit
+                }
+                
+                Remove-NetIPAddress -InterfaceAlias $adapter -Confirm:$false
+                Remove-NetRoute -InterfaceAlias $adapter -DestinationPrefix "0.0.0.0/0" -Confirm:$false
+                New-NetIPAddress –InterfaceAlias $adapter –IPAddress "192.168.204.182" –PrefixLength 24 -DefaultGateway "192.168.204.12"
+                Get-DnsClient -InterfaceAlias $adapter | Set-DnsClientServerAddress -ServerAddresses ("192.168.204.29")
             }
             2 {
                 Write-Host "WIP"
             }
             3 {
                 Clear-Host
-                $adapter = (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -Like "Ethernet*" -And $_.Status -EQ "Up" }).Name
                 if ((Get-NetAdapterBinding -ComponentID ms_tcpip6 -Name $adapter).Enabled -And $adapter -is "System.String") {
                     Write-Host "IPv6 is enabled"
                     Start-Sleep -Seconds 2
