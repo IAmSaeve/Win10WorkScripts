@@ -43,6 +43,8 @@ Function MainMenu {
         $Input = Read-Host -Prompt "Please select an option"
 
         switch ($Input) {
+            # Clear ethernet settings, if any exists, then,
+            # set IP to 192.168.204.182 and DNS 192.168.204.29.
             1 {
                 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
                     Write-Host "Waiting for process to finish"
@@ -53,9 +55,17 @@ Function MainMenu {
                     Get-DnsClient -InterfaceAlias $($adapter) | Set-DnsClientServerAddress -ServerAddresses ('192.168.204.29'); pause" -Verb RunAs
                 }
             }
+            # Set Ethernet settings DHCP and reset DNS settings.
             2 {
-                Write-Host "WIP"
+                if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+                    Write-Host "Waiting for process to finish"
+                    Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
+                    Set-NetIPInterface -InterfaceAlias $($adapter) -Dhcp Enabled; `
+                    Get-NetIPAddress -InterfaceAlias $($adapter) | Remove-NetRoute -Confirm:0; `
+                    Set-DnsClientServerAddress -InterfaceAlias $($adapter) -ResetServerAddresses -Confirm:0; pause" -Verb RunAs
+                }
             }
+            # Disabled IPv6
             3 {
                 Clear-Host
                 if ((Get-NetAdapterBinding -ComponentID ms_tcpip6 -Name $adapter).Enabled -And $adapter -is "System.String") {
