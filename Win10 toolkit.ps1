@@ -108,10 +108,30 @@ Function MainMenu {
             }
             # Remove Edge
             5 {
-                $edge = Test-Path "C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe"
-                $edgecp = Test-Path "C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdgeCP.exe"
-                $edgepdf = Test-Path "C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftPdfReader.exe"
+                $edgePath = "C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe"
+                $edgeExists = Test-Path "$edgePath\MicrosoftEdge.exe"
+                $edgecpExists = Test-Path "$edgePath\MicrosoftEdgeCP.exe"
+                $edgepdfExists = Test-Path "$edgePath\MicrosoftPdfReader.exe"
                 Remove-Item "$env:USERPROFILE\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue
+
+                if ($edgeExists -and !$edgecpExists -and $edgepdfExists) {
+                    Clear-Host
+                    if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+                        Write-Host "Waiting for process to finish"
+                        Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
+                        takeown /R /F $($edgePath)\*; `
+                        icacls $($edgePath)\* /grant ALLE:F; `
+                        Remove-Item $($edgePath)\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
+                        Remove-Item $($edgePath)\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
+                        Remove-Item $($edgePath)\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue; `
+                        Rename-Item $($edgePath)\MicrosoftEdge.exe $($edgePath)\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
+                        Rename-Item $($edgePath)\MicrosoftEdgeCP.exe $($edgePath)\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
+                        Rename-Item $($edgePath)\MicrosoftPdfReader.exe $($edgePath)\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue" -Verb RunAs
+                    }
+                } else {
+                    Write-Host "Need to remove specific files"
+                }
+                # TODO: Implement the rest
             }
             Q {
                 Exit
