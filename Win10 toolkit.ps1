@@ -44,15 +44,14 @@ Function MainMenu {
 
         switch ($Input) {
             1 {
-                # TODO: Extract to seperate script file
                 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-                    Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit
+                    Write-Host "Waiting for process to finish"
+                    Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
+                    Remove-NetIPAddress -InterfaceAlias $($adapter) -Confirm:0; `
+                    Remove-NetRoute -InterfaceAlias $($adapter) -DestinationPrefix '0.0.0.0/0' -Confirm:0 `
+                    New-NetIPAddress –InterfaceAlias $($adapter) –IPAddress '192.168.204.144' –PrefixLength 24 -DefaultGateway '192.168.204.12'; `
+                    Get-DnsClient -InterfaceAlias $($adapter) | Set-DnsClientServerAddress -ServerAddresses ('192.168.204.29'); pause" -Verb RunAs
                 }
-                
-                Remove-NetIPAddress -InterfaceAlias $adapter -Confirm:$false
-                Remove-NetRoute -InterfaceAlias $adapter -DestinationPrefix "0.0.0.0/0" -Confirm:$false
-                New-NetIPAddress –InterfaceAlias $adapter –IPAddress "192.168.204.182" –PrefixLength 24 -DefaultGateway "192.168.204.12"
-                Get-DnsClient -InterfaceAlias $adapter | Set-DnsClientServerAddress -ServerAddresses ("192.168.204.29")
             }
             2 {
                 Write-Host "WIP"
