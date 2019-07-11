@@ -1,3 +1,4 @@
+# Array of apps. Used to remove later.
 $Apps = (
     "Microsoft.SkypeApp",
     "Microsoft.SkypeApp",
@@ -27,6 +28,7 @@ $Apps = (
     "Microsoft.XboxApp"
 )
 
+# Find default Ethernet adapter.
 $adapter = (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -Like "Ethernet*" -And $_.Status -EQ "Up" }).Name
 
 
@@ -46,6 +48,7 @@ Function MainMenu {
             # Clear ethernet settings, if any exists, then,
             # set IP to 192.168.204.182 and DNS 192.168.204.29.
             1 {
+                Clear-Host
                 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
                     Write-Host "Waiting for process to finish"
                     Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
@@ -57,6 +60,7 @@ Function MainMenu {
             }
             # Set Ethernet settings DHCP and reset DNS settings.
             2 {
+                Clear-Host
                 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
                     Write-Host "Waiting for process to finish"
                     Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
@@ -81,10 +85,23 @@ Function MainMenu {
                     Read-Host -Prompt "IPv6 is disabled on this system.`nPress any key to continue..."
                 }
             }
+            # Initial preparations for new user
             4 {
-                # foreach ($app in $Apps) {
-                #     Get-AppxPackage -User "$env:UserDomain\$env:UserName" *$app* | Remove-AppxPackage
-                # }
+                Clear-Host
+                if ($env:USERNAME -NE "MANIT") {
+                    foreach ($app in $Apps) {
+                        Get-AppxPackage -User "$env:UserDomain\$env:UserName" *$app* | Remove-AppxPackage
+                    }
+
+                    New-Item -Path "C:\" -Name "Dokumenter" -ItemType "directory"
+                    Copy-Item "C:\Software_DK\Shortcuts\*" -Destination "$env:USERPROFILE\Favorites\Links\" -Recurse
+                    Copy-Item "C:\Software_DK\TeamViewerQS_da.exe" "$env:USERPROFILE\Desktop\"
+                    Remove-item "$env:USERPROFILE\Favorites\Bing.url"
+                    Write-Host "Done preparing user."
+                    Start-Sleep -Seconds 3
+                } else {
+                    Write-Host "Wrong user. Please only run this a standard user(Not MANIT)" -ForegroundColor Red
+                }
             }
             Q {
                 Exit
