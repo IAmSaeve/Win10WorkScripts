@@ -114,6 +114,7 @@ Function MainMenu {
                 $edgepdfExists = Test-Path "$edgePath\MicrosoftPdfReader.exe"
                 Remove-Item "$env:USERPROFILE\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue
 
+                # TODO: Use switch maybe?
                 if ($edgeExists -and !$edgecpExists -and $edgepdfExists) {
                     Clear-Host
                     if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
