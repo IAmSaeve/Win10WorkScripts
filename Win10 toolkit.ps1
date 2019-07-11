@@ -9,12 +9,14 @@ $Apps = (
     "Microsoft.Print3D",
     "Microsoft.People",
     "Microsoft.Office.OneNote",
+    "Microsoft.OneConnect",
     "Microsoft.MSPaint",
     "Microsoft.MicrosoftSolitaireCollection",
     "Microsoft.MicrosoftOfficeHub",
     "Microsoft.Microsoft3DViewer",
     "Microsoft.Messaging",
     "Microsoft.GetHelp",
+    "Microsoft.BingWeather",
     "Microsoft.Getstarted",
     "Microsoft.WindowsCamera",
     "Microsoft.RemoteDesktop",
@@ -41,6 +43,7 @@ Function MainMenu {
         Write-Host "2.  Set IP to automatic `n"
         Write-Host "3.  Disable IPv6 (Admin) `n"
         Write-Host "4.  Initial prep (As user) `n"
+        Write-Host "5.  Remove Edge (Admin) `n"
         Write-Host "Q.  Quit `n" -ForegroundColor Yellow
         $Input = Read-Host -Prompt "Please select an option"
 
@@ -96,12 +99,19 @@ Function MainMenu {
                     New-Item -Path "C:\" -Name "Dokumenter" -ItemType "directory"
                     Copy-Item "C:\Software_DK\Shortcuts\*" -Destination "$env:USERPROFILE\Favorites\Links\" -Recurse
                     Copy-Item "C:\Software_DK\TeamViewerQS_da.exe" "$env:USERPROFILE\Desktop\"
-                    Remove-item "$env:USERPROFILE\Favorites\Bing.url"
+                    Remove-item "$env:USERPROFILE\Favorites\Bing.url" -ErrorAction SilentlyContinue
                     Write-Host "Done preparing user."
                     Start-Sleep -Seconds 3
                 } else {
                     Write-Host "Wrong user. Please only run this a standard user(Not MANIT)" -ForegroundColor Red
                 }
+            }
+            # Remove Edge
+            5 {
+                $edge = Test-Path "C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe"
+                $edgecp = Test-Path "C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdgeCP.exe"
+                $edgepdf = Test-Path "C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftPdfReader.exe"
+                Remove-Item "$env:USERPROFILE\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue
             }
             Q {
                 Exit
