@@ -1,4 +1,4 @@
-# Array of apps. Used to remove later.
+﻿# Array of apps. Used to remove later.
 $Apps = (
     "Microsoft.SkypeApp",
     "Microsoft.SkypeApp",
@@ -56,9 +56,9 @@ Function MainMenu {
                     Write-Host "Waiting for process to finish"
                     Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
                     Remove-NetIPAddress -InterfaceAlias $($adapter) -Confirm:0; `
-                    Remove-NetRoute -InterfaceAlias $($adapter) -DestinationPrefix '0.0.0.0/0' -Confirm:0 `
+                    Remove-NetRoute -InterfaceAlias $($adapter) -DestinationPrefix '0.0.0.0/0' -Confirm:0; `
                     New-NetIPAddress –InterfaceAlias $($adapter) –IPAddress '192.168.204.144' –PrefixLength 24 -DefaultGateway '192.168.204.12'; `
-                    Get-DnsClient -InterfaceAlias $($adapter) | Set-DnsClientServerAddress -ServerAddresses ('192.168.204.29'); pause" -Verb RunAs
+                    Get-DnsClient -InterfaceAlias $($adapter) | Set-DnsClientServerAddress -ServerAddresses ('192.168.204.29'); Pause" -Verb RunAs
                 }
             }
             # Set Ethernet settings DHCP and reset DNS settings.
