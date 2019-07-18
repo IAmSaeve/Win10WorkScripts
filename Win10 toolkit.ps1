@@ -42,8 +42,13 @@ Function MainMenu {
         Write-Host "1.  Set TEST IP '192.168.204.182' (Admin) `n"
         Write-Host "2.  Set IP to automatic `n"
         Write-Host "3.  Disable IPv6 (Admin) `n"
-        Write-Host "4.  Initial prep (As user) `n"
-        Write-Host "5.  Remove Edge (Admin) `n"
+        Write-Host "4.  Change proxy config (WIP) `n"
+        Write-Host "5.  Open domain config `n"
+        Write-Host "6.  Open network settings `n"
+        Write-Host "7.  Show Ethernet config `n"
+        Write-Host "8.  Initial prep (As user) `n"
+        Write-Host "9.  Remove Edge (Admin) `n"
+        Write-Host "10.  Remove OneDrive (Admin) `n"
         Write-Host "Q.  Quit `n" -ForegroundColor Yellow
         $Input = Read-Host -Prompt "Please select an option"
 
@@ -80,16 +85,40 @@ Function MainMenu {
                     Start-Sleep -Seconds 2
                     Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
                     Disable-NetAdapterBinding -Name $($adapter) -ComponentID ms_tcpip6; Get-NetAdapterBinding -ComponentID ms_tcpip6; Start-Sleep -Seconds 3" -Verb RunAs
-                } elseif ($adapter -is "System.Array") {
+                }
+                elseif ($adapter -is "System.Array") {
                     Write-Host "Too many adapters were found.`nPlease manually select the correct adapter"
                     timeout.exe 5
                     Start-Process ncpa.cpl
-                } else {
+                }
+                else {
                     Read-Host -Prompt "IPv6 is disabled on this system.`nPress any key to continue..."
                 }
             }
-            # Initial preparations for new user
+            # Change proxy config (WIP)
             4 {
+                # TODO: Change reg-keys to do this automatically
+                Clear-Host
+                Write-Host "`nCopy and paste these into the LAN-Settings"
+                Write-Host "https://192.168.204.10/proxy.pac`n10.166.56.10"
+                inetcpl.cpl
+            }
+            # Open domain config
+            5 {
+                sysdm.cpl
+            }
+            # Open network settings
+            6 {
+                ncpa.cpl
+            }
+            # Show Ethernet config
+            7 {
+                Clear-Host
+                Get-NetIPConfiguration -InterfaceAlias $adapter
+                Pause
+            }
+            # Initial preparations for new user
+            8 {
                 Clear-Host
                 if ($env:USERNAME -NE "MANIT") {
                     foreach ($app in $Apps) {
@@ -102,12 +131,13 @@ Function MainMenu {
                     Remove-item "$env:USERPROFILE\Favorites\Bing.url" -ErrorAction SilentlyContinue
                     Write-Host "Done preparing user."
                     Start-Sleep -Seconds 3
-                } else {
+                }
+                else {
                     Write-Host "Wrong user. Please only run this a standard user(Not MANIT)" -ForegroundColor Red
                 }
             }
             # Remove Edge
-            5 {
+            9 {
                 $edgePath = "C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe"
                 $edgeExists = Test-Path "$edgePath\MicrosoftEdge.exe"
                 $edgecpExists = Test-Path "$edgePath\MicrosoftEdgeCP.exe"
@@ -128,9 +158,31 @@ Function MainMenu {
                         Rename-Item $($edgePath)\MicrosoftEdgeCP.exe $($edgePath)\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
                         Rename-Item $($edgePath)\MicrosoftPdfReader.exe $($edgePath)\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue" -Verb RunAs
                     }
-                } else {
+                }
+                else {
                     Write-Host "Edge is already removed"
                 }
+            }
+            # Remove OneDrive
+            10 {
+                Clear-Host
+                Start-Process -Wait "$env:SystemRoot\SYSWOW64\ONEDRIVESETUP.EXE" -ArgumentList "/UNINSTALL"
+
+                Remove-Item -Path "$env:USERPROFILE\OneDrive" -Recurse -ErrorAction SilentlyContinue # TODO: Fix no permission. Maybe with -Force
+                Remove-Item -Path "$env:LOCALAPPDATA\Microsoft\OneDrive" -Recurse -ErrorAction SilentlyContinue
+                Remove-Item -Path "$env:PROGRAMDATA\Microsoft OneDrive" -Recurse -ErrorAction SilentlyContinue
+                Remove-Item -Path "$env:USERPROFILE\AppData\Local\Microsoft\OneDrive" -Recurse -ErrorAction SilentlyContinue
+                Remove-Item -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk" -ErrorAction SilentlyContinue
+
+                if ((Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion").ReleaseId -le "1809") {
+                    Write-Host "Addign registry keys to unpin..."
+                    reg add "HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f /v System.IsPinnedToNameSpaceTree /t REG_DWORD /d 0
+                    reg add "HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f /v System.IsPinnedToNameSpaceTree /t REG_DWORD /d 0
+                }
+
+
+                Read-Host -Prompt "Press any key to restart explorer"
+                Stop-Process -ProcessName explorer
             }
             Q {
                 Exit
