@@ -114,8 +114,7 @@ Function MainMenu {
                 $edgepdfExists = Test-Path "$edgePath\MicrosoftPdfReader.exe"
                 Remove-Item "$env:USERPROFILE\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue
 
-                # TODO: Use switch maybe?
-                if ($edgeExists -and !$edgecpExists -and $edgepdfExists) {
+                if ($edgeExists -or $edgecpExists -or $edgepdfExists) {
                     Clear-Host
                     if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
                         Write-Host "Waiting for process to finish"
@@ -130,9 +129,8 @@ Function MainMenu {
                         Rename-Item $($edgePath)\MicrosoftPdfReader.exe $($edgePath)\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue" -Verb RunAs
                     }
                 } else {
-                    Write-Host "Need to remove specific files"
+                    Write-Host "Edge is already removed"
                 }
-                # TODO: Implement the rest
             }
             Q {
                 Exit
