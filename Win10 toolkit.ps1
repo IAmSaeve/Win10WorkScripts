@@ -91,7 +91,6 @@ Function MainMenu {
             # Disabled IPv6
             3 {
                 try {
-                    $adapter = "TEST"
                     Clear-Host
                     if ((Get-NetAdapterBinding -ComponentID ms_tcpip6 -Name $adapter -ErrorAction Stop).Enabled -And $adapter -is "System.String") {
                         Write-Host "IPv6 is enabled"
@@ -117,12 +116,13 @@ Function MainMenu {
             }
             # Change proxy config (WIP)
             4 {
-                # TODO: Change reg-keys to do this automatically
                 Clear-Host
-                New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -PropertyType "DWord" -Name "AutoDetect" -Value 0 –Force
-                Write-Host "`nCopy and paste these into the LAN-Settings"
-                Write-Host "https://192.168.204.10/proxy.pac`n10.166.56.10"
-                inetcpl.cpl
+                $internetSettingsPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+                New-ItemProperty -Path $internetSettingsPath -PropertyType "DWord" -Name "AutoDetect" -Value 0 –Force
+                New-ItemProperty -Path $internetSettingsPath -PropertyType "DWord" -Name "ProxyEnable" -Value 1 –Force
+                New-ItemProperty -Path $internetSettingsPath -PropertyType "String" -Name "AutoConfigURL" -Value "https://192.168.204.10/proxy.pac" –Force
+                New-ItemProperty -Path $internetSettingsPath -PropertyType "String" -Name "ProxyServer" -Value "10.166.56.10" –Force
+                New-ItemProperty -Path $internetSettingsPath -PropertyType "String" -Name "ProxyOverride" -Value "<local>" –Force # This prevents proxy for local addresses
             }
             # Open domain config
             5 {
