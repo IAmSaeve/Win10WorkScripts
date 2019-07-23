@@ -90,21 +90,30 @@ Function MainMenu {
             }
             # Disabled IPv6
             3 {
-                Clear-Host
-                if ((Get-NetAdapterBinding -ComponentID ms_tcpip6 -Name $adapter).Enabled -And $adapter -is "System.String") {
-                    Write-Host "IPv6 is enabled"
-                    Start-Sleep -Seconds 2
-                    Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
+                try {
+                    $adapter = "TEST"
+                    Clear-Host
+                    if ((Get-NetAdapterBinding -ComponentID ms_tcpip6 -Name $adapter -ErrorAction Stop).Enabled -And $adapter -is "System.String") {
+                        Write-Host "IPv6 is enabled"
+                        Start-Sleep -Seconds 2
+                        Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
                     Disable-NetAdapterBinding -Name '$adapter' -ComponentID ms_tcpip6; Get-NetAdapterBinding -ComponentID ms_tcpip6; Start-Sleep -Seconds 3" -Verb RunAs
+                    }
+                    elseif ($adapter -is "System.Array") {
+                        Write-Host "Too many adapters were found.`nPlease manually select the correct adapter"
+                        timeout.exe 5
+                        Start-Process ncpa.cpl
+                    }
+                    else {
+                        Read-Host -Prompt "IPv6 is disabled on this system.`nPress any key to continue..."
+                    }
                 }
-                elseif ($adapter -is "System.Array") {
-                    Write-Host "Too many adapters were found.`nPlease manually select the correct adapter"
-                    timeout.exe 5
-                    Start-Process ncpa.cpl
+                catch {
+                    Write-Host "Caught error when selecting adapter."
+                    Write-Host "Please disable IPv6 manually."
+                    Pause
                 }
-                else {
-                    Read-Host -Prompt "IPv6 is disabled on this system.`nPress any key to continue..."
-                }
+                
             }
             # Change proxy config (WIP)
             4 {
