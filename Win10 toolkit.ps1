@@ -32,11 +32,11 @@ $Apps = (
 
 # Find default Ethernet adapter.
 $adapter = ""
-if ($null -NE (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -Like "Ethernet*" -And $_.Status -NE "Not Present" }).Name) {
-    $adapter = (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -Like "Ethernet*" -And $_.Status -NE "Not Present" }).Name
+if ($null -NE (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -LIKE "Ethernet*" -AND $_.Status -NE "Not Present" -AND $_.Status -NE "Disabled" }).Name) {
+    $adapter = (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -LIKE "Ethernet*" -AND $_.Status -NE "Not Present" -AND $_.Status -NE "Disabled" }).Name
 }
 else {
-    $adapter = (Get-NetAdapter | Select-Object Name, InterfaceDescription | Where-Object { $_.Name -Like "Ethernet*" -And $_.InterfaceDescription -NotLike "*Cisco*" })[0].Name
+    $adapter = (Get-NetAdapter | Select-Object Name, InterfaceDescription | Where-Object { $_.Name -LIKE "Ethernet*" -AND $_.InterfaceDescription -NOTLIKE "*Cisco*" })[0].Name
     if ($null -EQ $adapter) {
         Write-Host "Failed to find ethernet adapter." -ForegroundColor Red
         Get-NetAdapter
@@ -53,7 +53,7 @@ Function MainMenu {
         Write-Host "1.   Set TEST IP '192.168.204.182' (Admin) `n"
         Write-Host "2.   Set IP to automatic `n"
         Write-Host "3.   Disable IPv6 (Admin) `n"
-        Write-Host "4.   Change proxy config (WIP) `n"
+        Write-Host "4.   Change proxy config `n"
         Write-Host "5.   Open domain config `n"
         Write-Host "6.   Open network settings `n"
         Write-Host "7.   Show Ethernet config `n"
@@ -64,41 +64,35 @@ Function MainMenu {
         $Input = Read-Host -Prompt "Please select an option"
 
         switch ($Input) {
-            # Clear ethernet settings, if any exists, then,
             # set IP to 192.168.204.182 and DNS 192.168.204.29.
             1 {
                 Clear-Host
-                if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-                    Write-Host "Waiting for process to finish"
-                    Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
-                    Remove-NetIPAddress -InterfaceAlias '$adapter' -Confirm:0; `
-                    Remove-NetRoute -InterfaceAlias '$adapter' -DestinationPrefix '0.0.0.0/0' -Confirm:0; `
-                    New-NetIPAddress –InterfaceAlias '$adapter' –IPAddress '192.168.204.182' –PrefixLength 24 -DefaultGateway '192.168.204.12'; `
-                    Get-DnsClient -InterfaceAlias '$adapter' | Set-DnsClientServerAddress -ServerAddresses ('192.168.204.29'); Pause" -Verb RunAs
-                }
+                Write-Host "Waiting for process to finish..."
+                Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
+                    netsh int ip set address name='$adapter' static 192.168.204.182 255.255.255.0 192.168.204.12 1; `
+                    netsh interface ipv4 add dnsservers '$adapter' address=192.168.204.29 index=1; `
+                    netsh interface ipv4 show config name='$adapter'; Pause" -Verb RunAs
             }
             # Set Ethernet settings DHCP and reset DNS settings.
             2 {
                 Clear-Host
-                if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-                    Write-Host "Waiting for process to finish"
-                    Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
-                    Set-NetIPInterface -InterfaceAlias '$adapter' -Dhcp Enabled; `
-                    Get-NetIPAddress -InterfaceAlias '$adapter' | Remove-NetRoute -Confirm:0; `
-                    Set-DnsClientServerAddress -InterfaceAlias '$adapter' -ResetServerAddresses -Confirm:0; pause" -Verb RunAs
-                }
+                Write-Host "Waiting for process to finish..."
+                Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
+                    netsh interface ip set address name='$adapter' dhcp; `
+                    netsh interface ip set dns name='$adapter' dhcp;`
+                    netsh interface ipv4 show config name='$adapter'; Pause" -Verb RunAs
             }
             # Disabled IPv6
             3 {
                 try {
                     Clear-Host
-                    if ((Get-NetAdapterBinding -ComponentID ms_tcpip6 -Name $adapter -ErrorAction Stop).Enabled -And $adapter -is "System.String") {
+                    if ((Get-NetAdapterBinding -ComponentID ms_tcpip6 -Name $adapter -ErrorAction Stop).Enabled -AND $adapter -IS "System.String") {
                         Write-Host "IPv6 is enabled"
                         Start-Sleep -Seconds 2
                         Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
-                    Disable-NetAdapterBinding -Name '$adapter' -ComponentID ms_tcpip6; Get-NetAdapterBinding -ComponentID ms_tcpip6; Start-Sleep -Seconds 3" -Verb RunAs
+                        Disable-NetAdapterBinding -Name '$adapter' -ComponentID ms_tcpip6; Get-NetAdapterBinding -ComponentID ms_tcpip6; Start-Sleep -Seconds 3" -Verb RunAs
                     }
-                    elseif ($adapter -is "System.Array") {
+                    elseif ($adapter -IS "System.Array") {
                         Write-Host "Too many adapters were found.`nPlease manually select the correct adapter"
                         timeout.exe 5
                         Start-Process ncpa.cpl
@@ -114,7 +108,7 @@ Function MainMenu {
                 }
                 
             }
-            # Change proxy config (WIP)
+            # Change proxy config
             4 {
                 Clear-Host
                 $internetSettingsPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
@@ -165,11 +159,11 @@ Function MainMenu {
                 $edgepdfExists = Test-Path "'$edgePath'\MicrosoftPdfReader.exe"
                 Remove-Item "$env:USERPROFILE\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue
 
-                if ($edgeExists -or $edgecpExists -or $edgepdfExists) {
+                if ($edgeExists -OR $edgecpExists -OR $edgepdfExists) {
                     Clear-Host
-                    if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-                        Write-Host "Waiting for process to finish"
-                        Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
+                    
+                    Write-Host "Waiting for process to finish"
+                    Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
                         takeown /R /F '$edgePath'\*; `
                         icacls '$edgePath'\* /grant ALLE:F; `
                         Remove-Item '$edgePath'\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
@@ -178,7 +172,7 @@ Function MainMenu {
                         Rename-Item '$edgePath'\MicrosoftEdge.exe '$edgePath'\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
                         Rename-Item '$edgePath'\MicrosoftEdgeCP.exe '$edgePath'\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
                         Rename-Item '$edgePath'\MicrosoftPdfReader.exe '$edgePath'\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue" -Verb RunAs
-                    }
+                    
                 }
                 else {
                     Write-Host "Edge is already removed"
@@ -195,10 +189,10 @@ Function MainMenu {
                 Remove-Item -Path "$env:USERPROFILE\AppData\Local\Microsoft\OneDrive" -Recurse -ErrorAction SilentlyContinue
                 Remove-Item -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk" -ErrorAction SilentlyContinue
 
-                if ((Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion").ReleaseId -le "1809") {
+                if ((Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion").ReleaseId -LE "1809") {
                     Write-Host "Addign registry keys to unpin..."
-                    reg add "HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f /v System.IsPinnedToNameSpaceTree /t REG_DWORD /d 0
-                    reg add "HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f /v System.IsPinnedToNameSpaceTree /t REG_DWORD /d 0
+                    New-ItemProperty -Path "HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" -PropertyType "DWord" -Name "System.IsPinnedToNameSpaceTree" -Value 0 –Force
+                    New-ItemProperty -Path "HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" -PropertyType "DWord" -Name "System.IsPinnedToNameSpaceTree" -Value 0 –Force
                 }
 
 
@@ -214,7 +208,7 @@ Function MainMenu {
             }
         }
     }
-    until ($Input -eq "q")
+    until ($Input -EQ "q")
 }
 
 # Launch The MainMenu
