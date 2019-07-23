@@ -50,17 +50,17 @@ Function MainMenu {
     Do {
         Clear-Host
         Write-Host "**************************`n"
-        Write-Host "1.  Set TEST IP '192.168.204.182' (Admin) `n"
-        Write-Host "2.  Set IP to automatic `n"
-        Write-Host "3.  Disable IPv6 (Admin) `n"
-        Write-Host "4.  Change proxy config (WIP) `n"
-        Write-Host "5.  Open domain config `n"
-        Write-Host "6.  Open network settings `n"
-        Write-Host "7.  Show Ethernet config `n"
-        Write-Host "8.  Initial prep (As user) `n"
-        Write-Host "9.  Remove Edge (Admin) `n"
+        Write-Host "1.   Set TEST IP '192.168.204.182' (Admin) `n"
+        Write-Host "2.   Set IP to automatic `n"
+        Write-Host "3.   Disable IPv6 (Admin) `n"
+        Write-Host "4.   Change proxy config (WIP) `n"
+        Write-Host "5.   Open domain config `n"
+        Write-Host "6.   Open network settings `n"
+        Write-Host "7.   Show Ethernet config `n"
+        Write-Host "8.   Initial prep (As user) `n"
+        Write-Host "9.   Remove Edge (Admin) `n"
         Write-Host "10.  Remove OneDrive (Admin) `n"
-        Write-Host "Q.  Quit `n" -ForegroundColor Yellow
+        Write-Host "Q.   Quit `n" -ForegroundColor Yellow
         $Input = Read-Host -Prompt "Please select an option"
 
         switch ($Input) {
