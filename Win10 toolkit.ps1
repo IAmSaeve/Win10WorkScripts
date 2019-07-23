@@ -71,10 +71,10 @@ Function MainMenu {
                 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
                     Write-Host "Waiting for process to finish"
                     Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
-                    Remove-NetIPAddress -InterfaceAlias $($adapter) -Confirm:0; `
-                    Remove-NetRoute -InterfaceAlias $($adapter) -DestinationPrefix '0.0.0.0/0' -Confirm:0; `
-                    New-NetIPAddress –InterfaceAlias $($adapter) –IPAddress '192.168.204.144' –PrefixLength 24 -DefaultGateway '192.168.204.12'; `
-                    Get-DnsClient -InterfaceAlias $($adapter) | Set-DnsClientServerAddress -ServerAddresses ('192.168.204.29'); Pause" -Verb RunAs
+                    Remove-NetIPAddress -InterfaceAlias '$adapter' -Confirm:0; `
+                    Remove-NetRoute -InterfaceAlias '$adapter' -DestinationPrefix '0.0.0.0/0' -Confirm:0; `
+                    New-NetIPAddress –InterfaceAlias '$adapter' –IPAddress '192.168.204.144' –PrefixLength 24 -DefaultGateway '192.168.204.12'; `
+                    Get-DnsClient -InterfaceAlias '$adapter' | Set-DnsClientServerAddress -ServerAddresses ('192.168.204.29'); Pause" -Verb RunAs
                 }
             }
             # Set Ethernet settings DHCP and reset DNS settings.
@@ -83,9 +83,9 @@ Function MainMenu {
                 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
                     Write-Host "Waiting for process to finish"
                     Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
-                    Set-NetIPInterface -InterfaceAlias $($adapter) -Dhcp Enabled; `
-                    Get-NetIPAddress -InterfaceAlias $($adapter) | Remove-NetRoute -Confirm:0; `
-                    Set-DnsClientServerAddress -InterfaceAlias $($adapter) -ResetServerAddresses -Confirm:0; pause" -Verb RunAs
+                    Set-NetIPInterface -InterfaceAlias '$adapter' -Dhcp Enabled; `
+                    Get-NetIPAddress -InterfaceAlias '$adapter' | Remove-NetRoute -Confirm:0; `
+                    Set-DnsClientServerAddress -InterfaceAlias '$adapter' -ResetServerAddresses -Confirm:0; pause" -Verb RunAs
                 }
             }
             # Disabled IPv6
@@ -95,7 +95,7 @@ Function MainMenu {
                     Write-Host "IPv6 is enabled"
                     Start-Sleep -Seconds 2
                     Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
-                    Disable-NetAdapterBinding -Name $($adapter) -ComponentID ms_tcpip6; Get-NetAdapterBinding -ComponentID ms_tcpip6; Start-Sleep -Seconds 3" -Verb RunAs
+                    Disable-NetAdapterBinding -Name '$adapter' -ComponentID ms_tcpip6; Get-NetAdapterBinding -ComponentID ms_tcpip6; Start-Sleep -Seconds 3" -Verb RunAs
                 }
                 elseif ($adapter -is "System.Array") {
                     Write-Host "Too many adapters were found.`nPlease manually select the correct adapter"
@@ -151,9 +151,9 @@ Function MainMenu {
             # Remove Edge
             9 {
                 $edgePath = "C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe"
-                $edgeExists = Test-Path "$edgePath\MicrosoftEdge.exe"
-                $edgecpExists = Test-Path "$edgePath\MicrosoftEdgeCP.exe"
-                $edgepdfExists = Test-Path "$edgePath\MicrosoftPdfReader.exe"
+                $edgeExists = Test-Path "'$edgePath'\MicrosoftEdge.exe"
+                $edgecpExists = Test-Path "'$edgePath'\MicrosoftEdgeCP.exe"
+                $edgepdfExists = Test-Path "'$edgePath'\MicrosoftPdfReader.exe"
                 Remove-Item "$env:USERPROFILE\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue
 
                 if ($edgeExists -or $edgecpExists -or $edgepdfExists) {
@@ -161,14 +161,14 @@ Function MainMenu {
                     if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
                         Write-Host "Waiting for process to finish"
                         Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
-                        takeown /R /F $($edgePath)\*; `
-                        icacls $($edgePath)\* /grant ALLE:F; `
-                        Remove-Item $($edgePath)\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
-                        Remove-Item $($edgePath)\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
-                        Remove-Item $($edgePath)\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue; `
-                        Rename-Item $($edgePath)\MicrosoftEdge.exe $($edgePath)\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
-                        Rename-Item $($edgePath)\MicrosoftEdgeCP.exe $($edgePath)\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
-                        Rename-Item $($edgePath)\MicrosoftPdfReader.exe $($edgePath)\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue" -Verb RunAs
+                        takeown /R /F '$edgePath'\*; `
+                        icacls '$edgePath'\* /grant ALLE:F; `
+                        Remove-Item '$edgePath'\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
+                        Remove-Item '$edgePath'\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
+                        Remove-Item '$edgePath'\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue; `
+                        Rename-Item '$edgePath'\MicrosoftEdge.exe '$edgePath'\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
+                        Rename-Item '$edgePath'\MicrosoftEdgeCP.exe '$edgePath'\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
+                        Rename-Item '$edgePath'\MicrosoftPdfReader.exe '$edgePath'\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue" -Verb RunAs
                     }
                 }
                 else {
