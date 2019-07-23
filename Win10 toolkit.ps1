@@ -110,6 +110,7 @@ Function MainMenu {
             4 {
                 # TODO: Change reg-keys to do this automatically
                 Clear-Host
+                New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -PropertyType "DWord" -Name "AutoDetect" -Value 0 –Force
                 Write-Host "`nCopy and paste these into the LAN-Settings"
                 Write-Host "https://192.168.204.10/proxy.pac`n10.166.56.10"
                 inetcpl.cpl
