@@ -179,7 +179,7 @@ Function MainMenu {
                 Clear-Host
                 Start-Process -Wait "$env:SystemRoot\SYSWOW64\ONEDRIVESETUP.EXE" -ArgumentList "/UNINSTALL"
 
-                Remove-Item -Path "$env:USERPROFILE\OneDrive" -Recurse -ErrorAction SilentlyContinue # TODO: Fix no permission. Maybe with -Force
+                Remove-Item -Path "$env:USERPROFILE\OneDrive" -Recurse -Force -ErrorAction SilentlyContinue
                 Remove-Item -Path "$env:LOCALAPPDATA\Microsoft\OneDrive" -Recurse -ErrorAction SilentlyContinue
                 Remove-Item -Path "$env:PROGRAMDATA\Microsoft OneDrive" -Recurse -ErrorAction SilentlyContinue
                 Remove-Item -Path "$env:USERPROFILE\AppData\Local\Microsoft\OneDrive" -Recurse -ErrorAction SilentlyContinue
