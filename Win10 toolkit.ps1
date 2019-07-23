@@ -32,11 +32,11 @@ $Apps = (
 
 # Find default Ethernet adapter.
 $adapter = ""
-if ($null -NE (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -Like "Ethernet*" -And $_.Status -EQ "Up" }).Name) {
-    $adapter = (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -Like "Ethernet*" -And $_.Status -EQ "Up" }).Name
+if ($null -NE (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -Like "Ethernet*" -And $_.Status -NE "Not Present" }).Name) {
+    $adapter = (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -Like "Ethernet*" -And $_.Status -NE "Not Present" }).Name
 }
 else {
-    $adapter = (Get-NetAdapter | Select-Object Name | Where-Object { $_.Name -Like "Ethernet*" })[0].Name
+    $adapter = (Get-NetAdapter | Select-Object Name, InterfaceDescription | Where-Object { $_.Name -Like "Ethernet*" -And $_.InterfaceDescription -NotLike "*Cisco*" })[0].Name
     if ($null -EQ $adapter) {
         Write-Host "Failed to find ethernet adapter." -ForegroundColor Red
         Get-NetAdapter
