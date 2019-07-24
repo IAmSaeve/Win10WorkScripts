@@ -51,7 +51,7 @@ else {
 
 # Create path for HKEY_CLASSES_ROOT of it does not exist
 if ($null -EQ (Get-PSDrive -PSProvider Registry | Where-Object { $_.Name -EQ "HKCR" })) {
-    New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
+    New-PSDrive -Name "HKCR" -PSProvider Registry -Root "HKEY_CLASSES_ROOT"
 }
 
 Function MainMenu {
