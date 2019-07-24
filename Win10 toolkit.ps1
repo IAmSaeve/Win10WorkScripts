@@ -60,10 +60,11 @@ Function MainMenu {
         Write-Host "4.   Configure Internet Settings `n"
         Write-Host "5.   Open domain config `n"
         Write-Host "6.   Open network settings `n"
-        Write-Host "7.   Show Ethernet config `n"
-        Write-Host "8.   Initial prep (As user) `n"
-        Write-Host "9.   Remove Edge (Admin) `n"
-        Write-Host "10.  Remove OneDrive (Admin) `n"
+        Write-Host "7.   Open Computeradministrator `n"
+        Write-Host "8.   Show Ethernet config `n"
+        Write-Host "9.   Initial prep (As user) `n"
+        Write-Host "10.  Remove Edge (Admin) `n"
+        Write-Host "11.  Remove OneDrive (Admin) `n"
         Write-Host "Q.   Quit `n" -ForegroundColor Yellow
         $Input = Read-Host -Prompt "Please select an option"
 
@@ -147,14 +148,18 @@ Function MainMenu {
             6 {
                 ncpa.cpl
             }
-            # Show Ethernet config
+            # Open Computeradministrator
             7 {
+                Start-Process CompMgmtLauncher.exe -Verb Runas
+            }
+            # Show Ethernet config
+            8 {
                 Clear-Host
                 Get-NetIPConfiguration -InterfaceAlias $adapter
                 Pause
             }
             # Initial preparations for new user
-            8 {
+            9 {
                 Clear-Host
                 if ($env:USERNAME -NE "MANIT") {
                     foreach ($app in $Apps) {
@@ -177,7 +182,7 @@ Function MainMenu {
                 }
             }
             # Remove Edge
-            9 {
+            10 {
                 $edgePath = "C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe"
                 $edgeExists = Test-Path "'$edgePath'\MicrosoftEdge.exe"
                 $edgecpExists = Test-Path "'$edgePath'\MicrosoftEdgeCP.exe"
@@ -207,7 +212,7 @@ Function MainMenu {
                 }
             }
             # Remove OneDrive
-            10 {
+            11 {
                 Clear-Host
                 Start-Process -Wait "$env:SystemRoot\SYSWOW64\ONEDRIVESETUP.EXE" -ArgumentList "/UNINSTALL"
 
