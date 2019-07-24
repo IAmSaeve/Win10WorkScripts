@@ -167,6 +167,7 @@ Function MainMenu {
             }
             # Initial preparations for new user
             9 {
+                # TODO: Fix visual glitch
                 Clear-Host
                 if ($env:USERNAME -NE "MANIT") {
                     foreach ($app in $Apps) {
