@@ -8,7 +8,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 # Gets user input.
 Clear-Host
-$name = Read-Host -Prompt "`Enter the new PC-name: "
+$name = Read-Host -Prompt "`Enter the new PC-name"
 
 # Change NETBIOS/PC name
 Rename-Computer -NewName $name
