@@ -44,6 +44,10 @@ else {
     }
 }
 
+# Create path for HKEY_CLASSES_ROOT
+if ($null -EQ (Get-PSDrive -PSProvider Registry | Where-Object {$_.Name -EQ "HKCR"})) {
+    New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
+}
 
 Function MainMenu {
     Clear-Host
@@ -87,13 +91,14 @@ Function MainMenu {
                 try {
                     Clear-Host
                     if ((Get-NetAdapterBinding -ComponentID ms_tcpip6 -Name $adapter -ErrorAction Stop).Enabled -AND $adapter -IS "System.String") {
-                        Write-Host "IPv6 is enabled"
+                        Write-Host "IPv6 is enabled!`n"
                         Start-Sleep -Seconds 2
+                        Write-Host "Waiting for process to finish..."
                         Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
                         Disable-NetAdapterBinding -Name '$adapter' -ComponentID ms_tcpip6; Get-NetAdapterBinding -ComponentID ms_tcpip6; Start-Sleep -Seconds 3" -Verb RunAs
                     }
                     elseif ($adapter -IS "System.Array") {
-                        Write-Host "Too many adapters were found.`nPlease manually select the correct adapter"
+                        Write-Host "Too many adapters were found.`nPlease configure the correct adapter manually."
                         timeout.exe 5
                         Start-Process ncpa.cpl
                     }
@@ -112,6 +117,7 @@ Function MainMenu {
             4 {
                 Clear-Host
                 $internetSettingsPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+
                 New-ItemProperty -Path $internetSettingsPath -PropertyType "DWord" -Name "AutoDetect" -Value 0 –Force
                 New-ItemProperty -Path $internetSettingsPath -PropertyType "DWord" -Name "ProxyEnable" -Value 1 –Force
                 New-ItemProperty -Path $internetSettingsPath -PropertyType "String" -Name "AutoConfigURL" -Value "https://192.168.204.10/proxy.pac" –Force
@@ -144,11 +150,15 @@ Function MainMenu {
                     Copy-Item "C:\Software_DK\Shortcuts\*" -Destination "$env:USERPROFILE\Favorites\Links\" -Recurse
                     Copy-Item "C:\Software_DK\TeamViewerQS_da.exe" "$env:USERPROFILE\Desktop\"
                     Remove-item "$env:USERPROFILE\Favorites\Bing.url" -ErrorAction SilentlyContinue
+                    Remove-Item "$env:USERPROFILE\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue
+
+                    Clear-Host
                     Write-Host "Done preparing user."
                     Start-Sleep -Seconds 3
                 }
                 else {
-                    Write-Host "Wrong user. Please only run this a standard user(Not MANIT)" -ForegroundColor Red
+                    Write-Host "Wrong user. Please only run this a standard user(Not MANIT)!" -ForegroundColor Red
+                    Pause
                 }
             }
             # Remove Edge
@@ -157,12 +167,13 @@ Function MainMenu {
                 $edgeExists = Test-Path "'$edgePath'\MicrosoftEdge.exe"
                 $edgecpExists = Test-Path "'$edgePath'\MicrosoftEdgeCP.exe"
                 $edgepdfExists = Test-Path "'$edgePath'\MicrosoftPdfReader.exe"
+
                 Remove-Item "$env:USERPROFILE\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue
 
                 if ($edgeExists -OR $edgecpExists -OR $edgepdfExists) {
                     Clear-Host
                     
-                    Write-Host "Waiting for process to finish"
+                    Write-Host "Waiting for process to finish..."
                     Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
                         takeown /R /F '$edgePath'\*; `
                         icacls '$edgePath'\* /grant ALLE:F; `
@@ -172,10 +183,12 @@ Function MainMenu {
                         Rename-Item '$edgePath'\MicrosoftEdge.exe '$edgePath'\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
                         Rename-Item '$edgePath'\MicrosoftEdgeCP.exe '$edgePath'\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
                         Rename-Item '$edgePath'\MicrosoftPdfReader.exe '$edgePath'\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue" -Verb RunAs
-                    
+                    Puase
                 }
                 else {
-                    Write-Host "Edge is already removed"
+                    Clear-Host
+                    Write-Host "Edge is already removed!"
+                    Pause
                 }
             }
             # Remove OneDrive
@@ -191,19 +204,23 @@ Function MainMenu {
 
                 if ((Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion").ReleaseId -LE "1809") {
                     Write-Host "Addign registry keys to unpin..."
-                    New-ItemProperty -Path "HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" -PropertyType "DWord" -Name "System.IsPinnedToNameSpaceTree" -Value 0 –Force
-                    New-ItemProperty -Path "HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" -PropertyType "DWord" -Name "System.IsPinnedToNameSpaceTree" -Value 0 –Force
+                    if (test-path "HKCR:\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}") {
+                        New-ItemProperty -Path "HKCR:\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" -PropertyType "DWord" -Name "System.IsPinnedToNameSpaceTree" -Value 0 –Force
+                    }
+                    if (test-path "HKCR:\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}") {
+                        New-ItemProperty -Path "HKCR:\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" -PropertyType "DWord" -Name "System.IsPinnedToNameSpaceTree" -Value 0 –Force
+                    }                    
                 }
 
-
-                Read-Host -Prompt "Press any key to restart explorer"
+                Write-Host "Finished removing OneDrive."
+                Read-Host -Prompt "Press any key to restart explorer."
                 Stop-Process -ProcessName explorer
             }
             Q {
                 Exit
             }
             default {
-                Write-Host "`nInvalid input"
+                Write-Host "`nInvalid input!"
                 Start-Sleep -Seconds 2
             }
         }
