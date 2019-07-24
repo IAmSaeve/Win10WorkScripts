@@ -57,7 +57,7 @@ Function MainMenu {
         Write-Host "1.   Set TEST IP '192.168.204.182' (Admin) `n"
         Write-Host "2.   Set IP to automatic `n"
         Write-Host "3.   Disable IPv6 (Admin) `n"
-        Write-Host "4.   Change proxy config `n"
+        Write-Host "4.   Configure Internet Settings `n"
         Write-Host "5.   Open domain config `n"
         Write-Host "6.   Open network settings `n"
         Write-Host "7.   Show Ethernet config `n"
@@ -113,16 +113,31 @@ Function MainMenu {
                 }
                 
             }
-            # Change proxy config
+            # Configure Internet Settings
             4 {
                 Clear-Host
                 $internetSettingsPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+                $TabbedBrowsingPath = "HKCU:\Software\Microsoft\Internet Explorer\TabbedBrowsing"
+                $MainPath = "HKCU:\Software\Microsoft\Internet Explorer\Main"
 
+                # Proxy
                 New-ItemProperty -Path $internetSettingsPath -PropertyType "DWord" -Name "AutoDetect" -Value 0 –Force
                 New-ItemProperty -Path $internetSettingsPath -PropertyType "DWord" -Name "ProxyEnable" -Value 1 –Force
                 New-ItemProperty -Path $internetSettingsPath -PropertyType "String" -Name "AutoConfigURL" -Value "https://192.168.204.10/proxy.pac" –Force
                 New-ItemProperty -Path $internetSettingsPath -PropertyType "String" -Name "ProxyServer" -Value "10.166.56.10" –Force
                 New-ItemProperty -Path $internetSettingsPath -PropertyType "String" -Name "ProxyOverride" -Value "<local>" –Force # This prevents proxy for local addresses
+
+                # New tab open startpage
+                New-ItemProperty -Path $TabbedBrowsingPath -PropertyType "DWord" -Name "NewTabPageShow" -Value 1 –Force
+                New-ItemProperty -Path $TabbedBrowsingPath -PropertyType "DWord" -Name "OpenAllHomePages" -Value 0 –Force
+
+                # Disable first run pop ups
+                New-ItemProperty -Path $MainPath -PropertyType "DWord" -Name "IE10RunOncePerInstallCompleted" -Value 1 –Force
+                New-ItemProperty -Path $MainPath -PropertyType "DWord" -Name "IE10TourShown" -Value 1 –Force
+
+                # Set Google as start page
+                New-ItemProperty -Path $MainPath -PropertyType "String" -Name "Start Page" -Value "https://www.google.dk/" –Force
+
             }
             # Open domain config
             5 {
