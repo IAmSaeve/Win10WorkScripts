@@ -1,4 +1,4 @@
-﻿# Array of apps. Used to remove later.
+﻿# Array of apps. Used to remove later
 $Apps = (
     "Microsoft.SkypeApp",
     "Microsoft.SkypeApp",
@@ -30,13 +30,15 @@ $Apps = (
     "Microsoft.XboxApp"
 )
 
-# Find default Ethernet adapter.
+# Find default Ethernet adapter
 $adapter = ""
 if ($null -NE (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -LIKE "Ethernet*" -AND $_.Status -NE "Not Present" -AND $_.Status -NE "Disabled" }).Name) {
     $adapter = (Get-NetAdapter | Select-Object Name, Status | Where-Object { $_.Name -LIKE "Ethernet*" -AND $_.Status -NE "Not Present" -AND $_.Status -NE "Disabled" }).Name
 }
 else {
+    # This tries to grab the default adapter if the ethernet adapter is not initially found
     $adapter = (Get-NetAdapter | Select-Object Name, InterfaceDescription | Where-Object { $_.Name -LIKE "Ethernet*" -AND $_.InterfaceDescription -NOTLIKE "*Cisco*" })[0].Name
+    
     if ($null -EQ $adapter) {
         Write-Host "Failed to find ethernet adapter." -ForegroundColor Red
         Get-NetAdapter
@@ -44,7 +46,7 @@ else {
     }
 }
 
-# Create path for HKEY_CLASSES_ROOT
+# Create path for HKEY_CLASSES_ROOT of it does not exist
 if ($null -EQ (Get-PSDrive -PSProvider Registry | Where-Object { $_.Name -EQ "HKCR" })) {
     New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
 }
@@ -70,7 +72,7 @@ Function MainMenu {
         $Input = Read-Host -Prompt "Please select an option"
 
         switch ($Input) {
-            # set IP to 192.168.204.182 and DNS 192.168.204.29.
+            # set IP to 192.168.204.182 and DNS 192.168.204.29
             1 {
                 Clear-Host
                 Write-Host "Waiting for process to finish..."
@@ -79,7 +81,7 @@ Function MainMenu {
                     netsh interface ipv4 add dnsservers '$adapter' address=192.168.204.29 index=1; `
                     netsh interface ipv4 show config name='$adapter'; Pause" -Verb RunAs
             }
-            # Set Ethernet settings DHCP and reset DNS settings.
+            # Set Ethernet settings DHCP and reset DNS settings
             2 {
                 Clear-Host
                 Write-Host "Waiting for process to finish..."
@@ -215,14 +217,18 @@ Function MainMenu {
             # Remove OneDrive
             11 {
                 Clear-Host
+
+                # Runs uninstaller for OneDrive
                 Start-Process -Wait "$env:SystemRoot\SYSWOW64\ONEDRIVESETUP.EXE" -ArgumentList "/UNINSTALL"
 
+                # Remove miscellaneous OneDrive paths
                 Remove-Item -Path "$env:USERPROFILE\OneDrive" -Recurse -Force -ErrorAction SilentlyContinue
                 Remove-Item -Path "$env:LOCALAPPDATA\Microsoft\OneDrive" -Recurse -ErrorAction SilentlyContinue
                 Remove-Item -Path "$env:PROGRAMDATA\Microsoft OneDrive" -Recurse -ErrorAction SilentlyContinue
                 Remove-Item -Path "$env:USERPROFILE\AppData\Local\Microsoft\OneDrive" -Recurse -ErrorAction SilentlyContinue
                 Remove-Item -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk" -ErrorAction SilentlyContinue
 
+                # Check for Windows versoin with "OneDrive pinned" registry keys, and try to unpin from Explorer
                 if ((Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion").ReleaseId -LE "1809") {
                     Write-Host "Addign registry keys to unpin..."
                     if (test-path "HKCR:\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}") {
