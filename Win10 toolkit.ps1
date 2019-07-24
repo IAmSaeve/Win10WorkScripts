@@ -65,6 +65,7 @@ Function MainMenu {
         Write-Host "9.   Initial prep (As user) `n"
         Write-Host "10.  Remove Edge (Admin) `n"
         Write-Host "11.  Remove OneDrive (Admin) `n"
+        Write-Host "12.  Debloat (As user) `n"
         Write-Host "Q.   Quit `n" -ForegroundColor Yellow
         $Input = Read-Host -Prompt "Please select an option"
 
@@ -235,6 +236,23 @@ Function MainMenu {
                 Write-Host "Finished removing OneDrive."
                 Read-Host -Prompt "Press any key to restart explorer."
                 Stop-Process -ProcessName explorer
+            }
+            # Debloat
+            12 {
+                Clear-Host
+                if ($env:USERNAME -NE "MANIT") {
+                    foreach ($app in $Apps) {
+                        Get-AppxPackage -User "$env:UserDomain\$env:UserName" *$app* | Remove-AppxPackage
+                    }
+
+                    Clear-Host
+                    Write-Host "Done preparing user."
+                    Start-Sleep -Seconds 3
+                }
+                else {
+                    Write-Host "Wrong user. Please only run this a standard user(Not MANIT)!" -ForegroundColor Red
+                    Pause
+                }
             }
             Q {
                 Exit
