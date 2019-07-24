@@ -45,7 +45,7 @@ else {
 }
 
 # Create path for HKEY_CLASSES_ROOT
-if ($null -EQ (Get-PSDrive -PSProvider Registry | Where-Object {$_.Name -EQ "HKCR"})) {
+if ($null -EQ (Get-PSDrive -PSProvider Registry | Where-Object { $_.Name -EQ "HKCR" })) {
     New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
 }
 
