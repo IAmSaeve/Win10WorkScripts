@@ -179,7 +179,7 @@ Function MainMenu {
                     Remove-Item "$env:USERPROFILE\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue
 
                     Clear-Host
-                    Write-Host "Done preparing user."
+                    Write-Host "Finished preparing user."
                     Start-Sleep -Seconds 3
                 }
                 else {
@@ -255,7 +255,7 @@ Function MainMenu {
                     }
 
                     Clear-Host
-                    Write-Host "Done preparing user."
+                    Write-Host "Finished removing apps."
                     Start-Sleep -Seconds 3
                 }
                 else {
