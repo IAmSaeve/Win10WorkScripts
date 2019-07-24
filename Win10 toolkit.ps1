@@ -145,6 +145,7 @@ Function MainMenu {
                 # Set Google as start page
                 New-ItemProperty -Path $MainPath -PropertyType "String" -Name "Start Page" -Value "https://www.google.dk/" –Force
 
+                Pause
             }
             # Open domain config
             5 {
