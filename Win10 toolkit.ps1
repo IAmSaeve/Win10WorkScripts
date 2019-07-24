@@ -1,4 +1,7 @@
-﻿# Array of apps. Used to remove later
+﻿# Sebastian Petersen
+# sebastian@srmail.dk
+
+# Array of apps. Used to remove later
 $Apps = (
     "Microsoft.SkypeApp",
     "Microsoft.SkypeApp",
