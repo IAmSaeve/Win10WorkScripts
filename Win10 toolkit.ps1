@@ -167,7 +167,6 @@ Function MainMenu {
             }
             # Initial preparations for new user
             9 {
-                # TODO: Fix visual glitch
                 Clear-Host
                 if ($env:USERNAME -NE "MANIT") {
                     foreach ($app in $Apps) {
@@ -181,8 +180,9 @@ Function MainMenu {
                     Remove-Item "$env:USERPROFILE\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue
 
                     Clear-Host
-                    Write-Host "Finished preparing user."
+                    Write-Host "`nFinished preparing user.`nRestarting script..."
                     Start-Sleep -Seconds 3
+                    Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`""; exit
                 }
                 else {
                     Write-Host "Wrong user. Please only run this a standard user(Not MANIT)!" -ForegroundColor Red
