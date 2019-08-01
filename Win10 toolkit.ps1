@@ -192,9 +192,9 @@ Function MainMenu {
             # Remove Edge
             10 {
                 $edgePath = "C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe"
-                $edgeExists = Test-Path "'$edgePath'\MicrosoftEdge.exe"
-                $edgecpExists = Test-Path "'$edgePath'\MicrosoftEdgeCP.exe"
-                $edgepdfExists = Test-Path "'$edgePath'\MicrosoftPdfReader.exe"
+                $edgeExists = Test-Path "$edgePath\MicrosoftEdge.exe"
+                $edgecpExists = Test-Path "$edgePath\MicrosoftEdgeCP.exe"
+                $edgepdfExists = Test-Path "$edgePath\MicrosoftPdfReader.exe"
 
                 Remove-Item "$env:USERPROFILE\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue
 
@@ -203,15 +203,15 @@ Function MainMenu {
                     
                     Write-Host "Waiting for process to finish..."
                     Start-Process -Wait powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `
-                        takeown /R /F '$edgePath'\*; `
-                        icacls '$edgePath'\* /grant ALLE:F; `
-                        Remove-Item '$edgePath'\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
-                        Remove-Item '$edgePath'\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
-                        Remove-Item '$edgePath'\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue; `
-                        Rename-Item '$edgePath'\MicrosoftEdge.exe '$edgePath'\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
-                        Rename-Item '$edgePath'\MicrosoftEdgeCP.exe '$edgePath'\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
-                        Rename-Item '$edgePath'\MicrosoftPdfReader.exe '$edgePath'\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue" -Verb RunAs
-                    Puase
+                        takeown /R /F $edgePath\*; `
+                        icacls $edgePath\* /grant ALLE:F; `
+                        Remove-Item $edgePath\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
+                        Remove-Item $edgePath\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
+                        Remove-Item $edgePath\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue; `
+                        Rename-Item $edgePath\MicrosoftEdge.exe $edgePath\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
+                        Rename-Item $edgePath\MicrosoftEdgeCP.exe $edgePath\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
+                        Rename-Item $edgePath\MicrosoftPdfReader.exe $edgePath\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue" -Verb RunAs
+                    Pause
                 }
                 else {
                     Clear-Host
