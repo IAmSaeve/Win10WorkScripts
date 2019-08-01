@@ -211,6 +211,9 @@ Function MainMenu {
                         Rename-Item $edgePath\MicrosoftEdge.exe $edgePath\MicrosoftEdge_remove.exe -ErrorAction SilentlyContinue; `
                         Rename-Item $edgePath\MicrosoftEdgeCP.exe $edgePath\MicrosoftEdgeCP_remove.exe -ErrorAction SilentlyContinue; `
                         Rename-Item $edgePath\MicrosoftPdfReader.exe $edgePath\MicrosoftPdfReader_remove.exe -ErrorAction SilentlyContinue" -Verb RunAs
+                    Clear-Host
+                    Write-Host "`nPlease verify that the files has been renamed successfully"
+                    Get-ChildItem -Path $edgePath
                     Pause
                 }
                 else {
